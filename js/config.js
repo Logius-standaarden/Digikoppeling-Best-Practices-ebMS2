@@ -22,10 +22,10 @@ var respecConfig = {
   // AL: "Algemeen"
   // BD: "Beheerdocumentatie"
   // BP: "Best Practice"
-  specType: "HR",
+  specType: "BP",
 
   // subtitle will be shown below title, can be omitted 
-  subtitle: "Hier komt een subtitle",
+  //subtitle: "Hier komt een subtitle",
 
   // The specification's "short name", which is the name used in NL_Respec URLs
   shortName: "digikoppeling",
@@ -33,10 +33,10 @@ var respecConfig = {
   // A YYYY-MM-DD date. The publication date of the present document. 
   // Als er geen publishDate is opgegeven, genereert ReSpec de dataum o.b.v. de laatste wijzigingen
   // Belangrijk: als publishDate niet opgegeven is, wordt bij de link "Laatst gepubliceerde versie" "geen" gezet. Anders wordt een link opgebouwd voor de laatste versie, met het formaat:
-  publishDate: "2021-01-31",
+  publishDate: "2019-05-16",
 
   // A YYYY-MM-DD date. When there is a previous release of a given specification, (W3C)
-  previousPublishDate: "2021-01-31",
+  // previousPublishDate: "2021-01-31",
 
   // Zie https://github.com/w3c/respec/wiki/previousMaturity. Dit moet een
   // A YYYY-MM-DD date. When a previousPublishDate is specified, this is typically required as well in order to generate the "Previous Version"
@@ -74,7 +74,7 @@ var respecConfig = {
   }
   ],
   // The github option allows you associate your specification with a repository on GitHub.
-  github: "https://github.com/Logius-standaarden/Template-Repository",
+  github: "https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-ebMS2",
 
   // The URL of your test suite, gets included in the specification's headers.
   // testSuiteURI: "https://portaal.digikoppeling.nl/CV/home.html",
@@ -124,7 +124,7 @@ var respecConfig = {
   // if not set, the url's will be generated on the respecConfig.github automatically  
   nl_github: {
     issueBase: "https://github.com/Logius-standaarden/<repository>/issues",
-    revision: "https://github.com/Logius-standaarden/<repository>/commits",
+    revision: "https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-ebMS2/commits",
     pullrequests: "https://github.com/Logius-standaarden/Logius-standaarden/<repository>/pulls"
   },
 
@@ -139,7 +139,7 @@ var respecConfig = {
   // class style can be automatically insertd in generated markdown tables
   // currently defaults to simple, but this may change
   // options simple, data, <your css>    
-  nl_markdownTableClass: "simple",
+  nl_markdownTableClass: "dkkvs",
 
   // if nl_markdownEmbedImageInFigure is set to true images in markdown generated content will be surrounded with <figures> element
   // so that figures can be linked are be a part of table of figures
@@ -184,6 +184,14 @@ var respecConfig = {
       date: "december 2020",
       publisher: "Logius",
     },
+    "ebCPP": {
+      href: "http://www.ebxml.org/specs/ebcpp-2.0.pdf",
+      title:
+        "Collaboration-Protocol Profile and Agreement Specification Version 2.0",
+      authors: ["Oasis"],
+      date: "september 2002",
+      publisher: "Oasis",
+    },
     "Digikoppeling Beveiligingsdocument": {
       href: "https://www.logius.nl/sites/default/files/bestanden/website/Digikoppeling_Beveiligingsstandaarden_en_voorschriften_v1.3.pdf",
       title: "Digikoppeling Beveiligingsstandaarden en voorschriften",
@@ -210,8 +218,8 @@ var respecConfig = {
       title: "Pkioverheid certificaten",
       publisher: "Logius"
     },
-    "Logius website": {
-      href: "https://logius.nl/digikoppeling",
+    "Digikoppeling Logius website": {
+      href: "https://logius.nl/diensten/digikoppeling/documentatie",
       title: "Logius Digikoppeling",
       publisher: "Logius",
     },
@@ -221,7 +229,7 @@ var respecConfig = {
       publisher: "Logius",
     },
 
-  
+
 
   }
 };
