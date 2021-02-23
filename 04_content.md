@@ -177,7 +177,7 @@ Een CPA voor testdoeleinden kan een korte geldigheidsperiode krijgen, afgestemd 
 
 ## EB011 MessageOrder en ConversationId
 
-Als de MessageOrder functionaliteit gebruikt word, moeten alle betreffende (samenhangende) berichten dezelfde ConversationId krijgen.
+Als de MessageOrder functionaliteit gebruikt wordt, moeten alle betreffende (samenhangende) berichten dezelfde ConversationId krijgen.
 
 Er zijn meerdere, onafhankelijke, berichtstromen mogelijk waar MessageOrder op van toepassing is als elke berichtstroom zijn eigen ConversationId krijgt.
 
@@ -227,7 +227,38 @@ De berichtuitwisseling in de keten was oorspronkelijk opgezet volgens asynchrone
     Indien de berichtuitwisseling via een intermediary verloopt dient deze ook de SyncReplymode te ondersteunen om de synchrone communicatie tussen partijen mogelijk te maken.
 </aside>
 
-#  CPA Gebruik en Kenmerken
+## EB016 Correlatie van berichten
+
+Voor het correleren van berichten in ebMS2 spelen de elementen *Messageid*, *ConversationId* en *RefToMessageId* een rol. Het gebruik van de combinatie *MessageId* en *RefToMessageId* en het *ConversationId* dienen verschillende doelen. 
+
+**Response op een specifiek request**<br> 
+*Messageid* en *RefToMessageId* worden gebruikt om heel specifiek aan te geven op welke request een response wordt gegeven. *RefToMessageId* wordt dus gebruikt om de relatie tussen een ebMS bericht en het daarop volgende ACK of NACK bericht aan te geven, een protocol gerelateerde relatie.
+
+
+<aside class="example">
+Voor een terugmelding  op de GBA met MessageId 1234 moet de GBA in het antwoord op deze terugmelding het RefToMessageId 1234 gebruiken. Zo zijn request en response onlosmakelijk met elkaar verbonden. Normaal gesproken worden geen verdere antwoorden op een dergelijke melding terugverwacht waardoor het bericht met het RefToMessageId ook vaak de transactie beëindigt.
+</aside>
+
+De invulling van het RefToMessageId element voor "normale" messages (dwz met business documenten) is afhankelijk van de processpecificaties die in een domein worden afgesproken. Als daarin namelijk wordt besloten om de relatie tussen vraag en antwoord alléén tot uitdrukking te brengen in de business documenten zelf, bijvoorbeeld in een SBDH, dan is het mogelijk om het RefToMessageId in het ebMS bericht waarin het antwoord is opgenomen weg te laten. 
+
+**Response binnen een conversatie**<br>
+Een *conversatie* gaat verder dan een simpele request/response. Een *conversation* is een gedefinieerd proces waarin meerdere berichten tussen twee partijen worden uitgewisseld. In alle ebMS berichten in een *instantie* van dat proces wordt dan hetzelfde *ConversationId* te gebruiken. De samenhang van de *individuele* transacties wordt bewaakt door het *MessageId* en *RefToMessageId* en de samenhang van het *proces* door het *ConversationId*. De waarde van 'ConversationId 'wordt in bepaald door de Partij die het eerste bericht verstuurd, de initiator. 
+
+Het gebruik van het ConversationId is dus op *business-niveau*, met verschillene implementaties:
+
+- Simpel vraagbericht met ConversationId waarop het antwoordbericht hetzelfde ConversationId bevat
+- Transactieachtig gebruik, waarbij meerdere vraag- en antwoordberichten, hetzelfde ConversationId bevatten
+- Uitwisselingen waarin het case nummer in ConversationId wordt gezet, dat kunnen meerdere opeenvolgende transacties zijn waarbij er ook enige tijd kan verstrijken tussen de transacties
+- Random, geen relatie tussen vraag en antwoordbericht op basis van ConversationId
+
+<aside class="example">
+Binnen het Justitie-domein is een goed voorbeeld hiervan het proces van de identiteitsvaststelling, waarbij één verzoek resulteert in meldingen naar meerdere registers waarna uiteindelijk een gecombineerd antwoord wordt teruggestuurd naar de Politie. Bij alle meldingen in één identiteitsvaststelling wordt hetzelfde ConversationId gebruikt, maar uiteraard hebben ze allemaal wel unieke MessageId’s (met bijbehorende RefToMessageId’s voor de antwoorden). 
+</aside>
+
+In een losstaande transactie heeft het ConversationId dus niet zoveel toegevoegde waarde. Die toegevoegde waarde onstaat pas op het moment dat meerdere transacties door middel van het overkoepelende ConversationId met elkaar verbonden worden.
+
+
+# CPA Gebruik en Kenmerken
 
 ## Inleiding
 
@@ -288,7 +319,10 @@ De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onder
     De service heeft als type “urn:osb:services” (zonder quotes).
 
     Een service wordt als volgt in het ebMS2 contract opgenomen (met een voorbeeld service “OSB:Service:1:0”):  
-    &lt;tns:Service tns:type="urn:osb:services"&gt;OSB:Service:1:0&lt;/tns:Service&gt;
+
+    ```XML
+    <tns:Service tns:type="urn:osb:services">OSB:Service:1:0</tns:Service>
+    ```
 
 - CPAId
 
@@ -335,7 +369,10 @@ De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onder
     Deze heeft de waarde urn:osb:oin voor PartyId's met een OIN.(Dit is ook de default waarde voor de CPA's zoals die door het CPA register wordt gehanteerd.)
 
     De PartyId type wordt als volgt opgenomen in het ebMS2 contract (met een voorbeeld van de PartyId waarde “0123456789”):  
-    &lt;tns:PartyId tns:type="urn:osb:oin"&gt;123456789&lt;/tns:PartyId&gt;
+        
+    ```XML
+    <tns:PartyId tns:type="urn:osb:oin">123456789</tns:PartyId>
+    ```
 
     Het is toegestaan om een andere PartyId type te hanteren als de organisatie reeds andersoortige (geen OIN's) PartyId’s heeft voor de organisatie identificatie. Het moge duidelijk zijn dat het in overleg met de samenwerkende organisaties vastgesteld moet worden. Zie ook EB014 in hoofdstuk 2.
 
@@ -343,27 +380,35 @@ De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onder
 
     Deze heeft de volgende verplichte waarde, waarbij alleen de timeToPerform een andere waarde kan krijgen (afhankelijk van de timing karakteristieken van de RequestingBusinessActivity en de RespondingBusinessActivity):
 
-    ```XML
-    <tns:BusinessTransactionCharacteristics 
-        tns:isAuthenticated="transient"
-        tns:isAuthorizationRequired="true" 
-        tns:isConfidential="transient"
-        tns:isIntelligibleCheckRequired="false"
-        tns:isNonRepudiationReceiptRequired="false"
-        tns:isNonRepudiationRequired="false" 
-        tns:isTamperProof="transient" 
-        tns:timeToPerform="P2D"/>
-    ```
+```XML
+<tns:BusinessTransactionCharacteristics 
+    tns:isAuthenticated="transient"
+    tns:isAuthorizationRequired="true" 
+    tns:isConfidential="transient"
+    tns:isIntelligibleCheckRequired="false"
+    tns:isNonRepudiationReceiptRequired="false"
+    tns:isNonRepudiationRequired="false" 
+    tns:isTamperProof="transient" 
+    tns:timeToPerform="P2D"/>
+```
 
 
 TransportProtocol over HTTP met TLS met server certificaat.  
 Deze hebben de verplichte waardes:
 
-&lt;tns:TransportProtocol tns:version="1.1"&gt;HTTP&lt;/tns:TransportProtocol&gt;
+```XML
+<tns:TransportProtocol tns:version="1.1">HTTP</tns:TransportProtocol>
+```
 
 en voor bijvoorbeeld versie 1 van TLS
 
-&lt;tns:TransportSecurityProtocol tns:version="1.0"&gt;TLS&lt;/tns:TransportSecurityProtocol&gt;
+```XML
+<tns:TransportSecurityProtocol tns:version="1.0">TLS</tns:TransportSecurityProtocol>
+```
+
+<aside class="note">
+voor de actuele versies van het te gebruiken protocol bij de uitwisseling zie [[Digikoppeling Beveiligingsdocument]]
+</aside>
 
 - Client Authentication over HTTP met client certificaat. Dit is verplicht. In het client certificaat staat in het subject.Serialnumber de PartyId van de ‘client’ organisatie.
 
@@ -375,13 +420,18 @@ en voor bijvoorbeeld versie 1 van TLS
 
     De MessageOrder geeft aan of er wel of geen gebruik gemaakt wordt van ordening van berichten. De default waarde voor MessageOrder is “NotGuaranteed” en wordt als volgt opgenomen in het ebMS2 contract:
 
-    &lt;tns:MessageOrderSemantics&gt;NotGuaranteed&lt;/tns:MessageOrderSemantics&gt;
+    ```XML
+        <tns:MessageOrderSemantics>NotGuaranteed</tns:MessageOrderSemantics>
+    ```
 
     Indien er wel gebruik gemaakt wordt van MessageOrder is de waarde:
 
-    &lt;tns:MessageOrderSemantics&gt;Guaranteed&lt;/tns:MessageOrderSemantics&gt;
+    ```XML
+        <tns:MessageOrderSemantics>Guaranteed</tns:MessageOrderSemantics>
+    ```
 
-    Noot: MessageOrder wordt niet door alle ebMS-adapters implementaties ondersteund. Als het wel het geval is zal de interoperabiliteit goed getest moeten worden. Zie hoofdstuk “Het gebruik van bericht volgordelijkheid”.
+<aside class="note"> MessageOrder wordt niet door alle ebMS-adapters implementaties ondersteund. Als het wel het geval is zal de interoperabiliteit goed getest moeten worden. Zie hoofdstuk “Het gebruik van bericht volgordelijkheid”.
+</aside>
 
 - ReliableMessaging
 
@@ -397,17 +447,19 @@ en voor bijvoorbeeld versie 1 van TLS
 
     In het geval dat MessageOrder wel gebruikt wordt, komt in de CPA:
 
-    &lt;tns:MessageOrderSemantics&gt;Guaranteed&lt;/tns:MessageOrderSemantics&gt;
+    <tns:MessageOrderSemantics>Guaranteed</tns:MessageOrderSemantics>
 
     Conform de ebMS2 specificatie zal de applicatie dezelfde ConversationId moeten gebruiken voor de opeenvolgende berichten<sup>5</sup>.
 
-<sup>5</sup>: [[EBXML-MSG]] H9.1.1 “The REQUIRED SequenceNumber element indicates the sequence a Receiving MSH MUST process messages. The SequenceNumber **is unique within** the ConversationId and MSH.”
+    <sup>5</sup>: [[EBXML-MSG]] H9.1.1 “The REQUIRED SequenceNumber element indicates the sequence a Receiving MSH MUST process messages. The SequenceNumber **is unique within** the ConversationId and MSH.”
 
 - PersistDuration
 
     Deze heeft default de waarde van 1 dag, maar zal anders zijn als er andere waardes voor ReliableMessaging gebruikt worden:
 
-    &lt;tns:PersistDuration&gt;P1D&lt;/tns:PersistDuration&gt;
+    ```XML
+    <tns:PersistDuration>P1D</tns:PersistDuration>
+    ```
 
 - MessagingCharacteristic
 
