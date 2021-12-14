@@ -28,7 +28,7 @@ Deze communicatie vindt plaats in het domein van Digikoppeling, en daarbij worde
 
 Digikoppeling biedt de mogelijkheid om op deze gestandaardiseerde wijze berichten uit te wisselen tussen service aanbieders en service afnemers. Digikoppeling richt zich voornamelijk op uitwisselingen tussen overheidsorganisaties maar er zijn ook implementaties bekend van de toepassing van Digikoppeling bij uitwisseling tussen bedrijven en overheden.
 
-**Uitwisseling binnen Digikoppeling**
+### Uitwisseling binnen Digikoppeling
 
 De uitwisseling tussen partijen is in drie lagen opgedeeld:
 
@@ -53,9 +53,7 @@ Hoofdstuk 4 gaat over bericht volgordelijkheid.
 
 Begrippen en afkortingen worden toegelicht in het document “DigikoppelingArchitectuur”. Deze zit in de Digikoppeling standaard.
 
-Dit document en andere documentatie is beschikbaar op
-
-[www.logius.nl/digikoppeling](http://www.logius.nl/digikoppeling).
+Dit document en andere documentatie is beschikbaar op [www.logius.nl/digikoppeling](http://www.logius.nl/digikoppeling).
 
 # Werkwijze/Aanbevelingen/Best Practices
 
@@ -77,7 +75,7 @@ Voor het definiëren van een CPA geldt het volgende advies:
 
 Het is raadzaam om test- en productieservices ('OTAP') op aparte machines onder te brengen om het onderscheid tussen beide helder te houden. Geef ze een eigen DNS naam (en dus verschillende PKI overheid certificaten), bijvoorbeeld door het gebruik van verschillende subdomeinnamen.
 
-## EB004 PartyId postfix 
+## EB004 PartyId postfix
 
 Voorzie de PartyId van een postfix voor het onderscheid tussen test- en productieservices ('OTAP'). De naamgevingsconventie is hierbij:
 
@@ -101,7 +99,7 @@ Ook wordt geadviseerd om autorisaties te baseren op het OIN dat uit het certific
 
 ## EB006 Service & Action naamgeving
 
-**Advies 1**: gebruik een functionele naam voor de naamgeving van de Service. Verwerk de versie in de service naam. De servicenaam mag de URN zijn.
+Advies 1: gebruik een functionele naam voor de naamgeving van de Service. Verwerk de versie in de service naam. De servicenaam mag de URN zijn.
 
 <aside class="example">
 Voor Digimelding  wordt een service gedefinieerd voor de verwerking van de berichten tussen de afnemer en Digimelding en tussen de registratiehouders en de Digimelding. De service krijgt de naam:
@@ -109,7 +107,7 @@ Voor Digimelding  wordt een service gedefinieerd voor de verwerking van de beric
 Digimelding:1:0
 </aside>
 
-**Advies 2:** als er gebruik gemaakt wordt van het CPA Register, gebruik dan als Identificerende naam de naam van de service (het laatste onderdeel van het pad in de URN.)
+Advies 2: als er gebruik gemaakt wordt van het CPA Register, gebruik dan als Identificerende naam de naam van de service (het laatste onderdeel van het pad in de URN.)
 
 <aside class="example">
 Voor Digimelding wordt een service gedefinieerd voor de verwerking van de berichten tussen de afnemer en Digimelding en tussen de registratiehouders en Digimelding. De service wordt opgeslagen in het CPA Register met de Identificerende naam:
@@ -119,7 +117,7 @@ Digimelding.1.0
 
 Met deze Identificerende naam kan een afnemer een CPA laten maken op basis van de naam (zie 'Digikoppeling CPA Creatievoorziening Handleiding' op Digikoppeling website).
 
-**Advies 3**: gebruik een functionele naam (liefst een werkwoord) voor de naamgeving van de Actions. Denk eraan dat een Service meerdere Actions mag bevatten (meldingen).
+Advies 3: gebruik een functionele naam (liefst een werkwoord) voor de naamgeving van de Actions. Denk eraan dat een Service meerdere Actions mag bevatten (meldingen).
 
 <aside class="example">
 Voor de Digimelding wordt in een service de Action gedefinieerd voor het terugmelden van een geconstateerde foutieve registratie. De naam voor de service is:
@@ -197,7 +195,7 @@ Als een grote organisatie, bestaande uit meerdere deel-organisaties, via een gat
 
 Het is toegestaan om op transport niveau het cliënt certificaat te gebruiken voor de authenticatie van de organisatie als geheel. Als waarde voor de PartyId mogen OIN's gebruikt worden die afwijken van het OIN in het authenticatie certificaat. Het is aan de samenwerkende partijen om er op toe te zien dat de juiste PartyId's gebruikt worden. In dergelijke situaties is het tevens toegestaan om PartyId's te gebruiken die afwijken van de gangbare OIN's, mits er een ander PartyId type aangegeven wordt. (Voor de OIN geldt urn:osb:oin.) Vanuit Digikoppeling wordt in dergelijke gevallen een dringend advies gegeven om de deel-organisaties een eigen OIN te laten aanvragen. (Het toestaan van een eigen PartyId waarde in de communicatie op Digikoppeling tussen de Nederlandse overheden wordt gezien als een tijdelijke situatie).
 
-## EB015 SyncReplyMode 
+## EB015 SyncReplyMode
 
 Het Digikoppeling ebMS2 Reliable Messaging (RM) profiel vereist dat berichten bevestigd worden met een *acknowledgement* bericht. Binnen het Digikoppeling ebMS2 RM-profiel moet deze acknowledgement *asynchroon* worden verzonden. Een Digikoppeling oplossing houdt hiervoor een administratie bij zodat de acknowledgement aan het initiële *MessageId* van het bericht kan worden kan worden gerefereerd
 
@@ -215,13 +213,13 @@ Bij uitwisseling tussen een GDI-voorziening en een grote afnemer worden door de 
 
 De berichtuitwisseling in de keten was oorspronkelijk opgezet volgens asynchrone bevestiging. Bij de ketenintegratietest tussen beide partijen kwamen verwerkingsproblemen aan de ontvangende kant aan het licht. In onderling overleg tussen de ketenpartners is afgesproken om de ebMS2 uitwisseling zo in te stellen dat acknowledgements synchroon verstuurd worden. Hierna verliep de uitwisseling volgens de afgesproken eisen aan capaciteit, performance en betrouwbaarheid.
 
-**Voorwaarden voor toepassen van het synchrone bevestiging**
+### Voorwaarden voor toepassen van het synchrone bevestiging
 
-- **Scope**: Dit profiel is alleen geldig voor de Digikoppeling ebMS2 RM-profielen
+- Scope: Dit profiel is alleen geldig voor de Digikoppeling ebMS2 RM-profielen
 
-- **Aanleiding**: Door omvang van het volume van uitwisseling van berichten in beperkte tijd bestaan verwerkingsproblemen bij (een van beide) providers. Asynchrone uitwisseling van berichten binnen het ebMS profiel blijft de defaultmodus. Dus als de verwerking probleemloos verloopt is er geen reden om over te gaan op synchrone uitwisseling.
+- Aanleiding: Door omvang van het volume van uitwisseling van berichten in beperkte tijd bestaan verwerkingsproblemen bij (een van beide) providers. Asynchrone uitwisseling van berichten binnen het ebMS profiel blijft de defaultmodus. Dus als de verwerking probleemloos verloopt is er geen reden om over te gaan op synchrone uitwisseling.
 
-- **Voorwaarde**: De Digikoppeling oplossing van beide partijen ondersteunen het instellen van SyncReplymode op mshSignalsOnly. Het instellen van deze mode kan dus niet eenzijdig worden opgelegd.
+- Voorwaarde: De Digikoppeling oplossing van beide partijen ondersteunen het instellen van SyncReplymode op mshSignalsOnly. Het instellen van deze mode kan dus niet eenzijdig worden opgelegd.
 
 <aside class="note">
     Indien de berichtuitwisseling via een intermediary verloopt dient deze ook de SyncReplymode te ondersteunen om de synchrone communicatie tussen partijen mogelijk te maken.
@@ -229,9 +227,10 @@ De berichtuitwisseling in de keten was oorspronkelijk opgezet volgens asynchrone
 
 ## EB016 Correlatie van berichten
 
-Voor het correleren van berichten in ebMS2 spelen de elementen *Messageid*, *ConversationId* en *RefToMessageId* een rol. Het gebruik van de combinatie *MessageId* en *RefToMessageId* en het *ConversationId* dienen verschillende doelen. 
+Voor het correleren van berichten in ebMS2 spelen de elementen *Messageid*, *ConversationId* en *RefToMessageId* een rol. Het gebruik van de combinatie *MessageId* en *RefToMessageId* en het *ConversationId* dienen verschillende doelen.
 
-**Response op een specifiek request**<br> 
+### Response op een specifiek request
+
 *Messageid* en *RefToMessageId* worden gebruikt om heel specifiek aan te geven op welke request een response wordt gegeven. *RefToMessageId* wordt dus gebruikt om de relatie tussen een ebMS bericht en het daarop volgende ACK of NACK bericht aan te geven, een protocol gerelateerde relatie.
 
 
@@ -239,10 +238,11 @@ Voor het correleren van berichten in ebMS2 spelen de elementen *Messageid*, *Con
 Voor een terugmelding  op de GBA met MessageId 1234 moet de GBA in het antwoord op deze terugmelding het RefToMessageId 1234 gebruiken. Zo zijn request en response onlosmakelijk met elkaar verbonden. Normaal gesproken worden geen verdere antwoorden op een dergelijke melding terugverwacht waardoor het bericht met het RefToMessageId ook vaak de transactie beëindigt.
 </aside>
 
-De invulling van het RefToMessageId element voor "normale" messages (dwz met business documenten) is afhankelijk van de processpecificaties die in een domein worden afgesproken. Als daarin namelijk wordt besloten om de relatie tussen vraag en antwoord alléén tot uitdrukking te brengen in de business documenten zelf, bijvoorbeeld in een SBDH, dan is het mogelijk om het RefToMessageId in het ebMS bericht waarin het antwoord is opgenomen weg te laten. 
+De invulling van het RefToMessageId element voor "normale" messages (dwz met business documenten) is afhankelijk van de processpecificaties die in een domein worden afgesproken. Als daarin namelijk wordt besloten om de relatie tussen vraag en antwoord alléén tot uitdrukking te brengen in de business documenten zelf, bijvoorbeeld in een SBDH, dan is het mogelijk om het RefToMessageId in het ebMS bericht waarin het antwoord is opgenomen weg te laten.
 
-**Response binnen een conversatie**<br>
-Een *conversatie* gaat verder dan een simpele request/response. Een *conversation* is een gedefinieerd proces waarin meerdere berichten tussen twee partijen worden uitgewisseld. In alle ebMS berichten in een *instantie* van dat proces wordt dan hetzelfde *ConversationId* te gebruiken. De samenhang van de *individuele* transacties wordt bewaakt door het *MessageId* en *RefToMessageId* en de samenhang van het *proces* door het *ConversationId*. De waarde van 'ConversationId 'wordt in bepaald door de Partij die het eerste bericht verstuurd, de initiator. 
+### Response binnen een conversatie
+
+Een *conversatie* gaat verder dan een simpele request/response. Een *conversation* is een gedefinieerd proces waarin meerdere berichten tussen twee partijen worden uitgewisseld. In alle ebMS berichten in een *instantie* van dat proces wordt dan hetzelfde *ConversationId* te gebruiken. De samenhang van de *individuele* transacties wordt bewaakt door het *MessageId* en *RefToMessageId* en de samenhang van het *proces* door het *ConversationId*. De waarde van 'ConversationId 'wordt in bepaald door de Partij die het eerste bericht verstuurd, de initiator.
 
 Het gebruik van het ConversationId is dus op *business-niveau*, met verschillene implementaties:
 
@@ -252,11 +252,10 @@ Het gebruik van het ConversationId is dus op *business-niveau*, met verschillene
 - Random, geen relatie tussen vraag en antwoordbericht op basis van ConversationId
 
 <aside class="example">
-Binnen het Justitie-domein is een goed voorbeeld hiervan het proces van de identiteitsvaststelling, waarbij één verzoek resulteert in meldingen naar meerdere registers waarna uiteindelijk een gecombineerd antwoord wordt teruggestuurd naar de Politie. Bij alle meldingen in één identiteitsvaststelling wordt hetzelfde ConversationId gebruikt, maar uiteraard hebben ze allemaal wel unieke MessageId’s (met bijbehorende RefToMessageId’s voor de antwoorden). 
+Binnen het Justitie-domein is een goed voorbeeld hiervan het proces van de identiteitsvaststelling, waarbij één verzoek resulteert in meldingen naar meerdere registers waarna uiteindelijk een gecombineerd antwoord wordt teruggestuurd naar de Politie. Bij alle meldingen in één identiteitsvaststelling wordt hetzelfde ConversationId gebruikt, maar uiteraard hebben ze allemaal wel unieke MessageId’s (met bijbehorende RefToMessageId’s voor de antwoorden).
 </aside>
 
 In een losstaande transactie heeft het ConversationId dus niet zoveel toegevoegde waarde. Die toegevoegde waarde onstaat pas op het moment dat meerdere transacties door middel van het overkoepelende ConversationId met elkaar verbonden worden.
-
 
 # CPA Gebruik en Kenmerken
 
@@ -272,7 +271,7 @@ De CPA is gestandaardiseerd in [ISO 15000-1: ebXML Collaborative Partner Profile
 
 <sup>3</sup>: [[ebCPP]] Collaboration-Protocol Profile and Agreement Specification Version 2.0, September 23, 2002. Url: http://www.oasis-open.org/committees/ebxml-cppa/documents/ebcpp-2.0c.pdf
 
-<sup>4</sup>: Message Service Specification, Version 2.0, 1 April 2002. Url: http://www.oasis-open.org/committees/ebxml-msg/documents/ebMS_v2_0.pdf [[EBXML-MSG]] 
+<sup>4</sup>: Message Service Specification, Version 2.0, 1 April 2002. Url: http://www.oasis-open.org/committees/ebxml-msg/documents/ebMS_v2_0.pdf [[EBXML-MSG]]
 
 De eigenschappen van de gegevensoverdracht geven onder andere aan:
 
@@ -347,7 +346,7 @@ De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onder
     Elke CPA heeft een start en einddatum. Dit moet afgestemd worden tussen de twee partijen die een samenwerking aangaan. Merk op dat er een afhankelijkheid is met de geldigheidsperiode van de gebruikte client- en servercertificaten.
 
 - Default Message Channel  
-    Een CPA bevat twee PartyInfo elementen: voor elke deelnemer in de samenwerking één. Elk PartyInfo element kent precies één 'default channel' dat gebruikt wordt voor de verzending van onderliggende protocol berichten (zoals de acknowledgments). In de CPA wordt deze 'default channel' aangegeven met het defaultMshChannelId attribuut. De eigenschappen van dit channel worden bepaald op basis van het Digikoppeling ebMS2 profiel met de hoogste beveiliging. Als een CPA verschillende Actions bevat waarvoor de acknowledgements verschillende profiel eigenschappen hebben, zullen de Actions verdeeld moeten worden over meerdere CPA's: in elke CPA komen die Actions die dezelfde profiel eigenschappen hebben. Als er gebruik gemaakt wordt van de CPA Creatievoorziening zullen er verschillende Digikoppeling-ebMS2 Servicespecificaties gemaakt moeten worden. 
+    Een CPA bevat twee PartyInfo elementen: voor elke deelnemer in de samenwerking één. Elk PartyInfo element kent precies één 'default channel' dat gebruikt wordt voor de verzending van onderliggende protocol berichten (zoals de acknowledgments). In de CPA wordt deze 'default channel' aangegeven met het defaultMshChannelId attribuut. De eigenschappen van dit channel worden bepaald op basis van het Digikoppeling ebMS2 profiel met de hoogste beveiliging. Als een CPA verschillende Actions bevat waarvoor de acknowledgements verschillende profiel eigenschappen hebben, zullen de Actions verdeeld moeten worden over meerdere CPA's: in elke CPA komen die Actions die dezelfde profiel eigenschappen hebben. Als er gebruik gemaakt wordt van de CPA Creatievoorziening zullen er verschillende Digikoppeling-ebMS2 Servicespecificaties gemaakt moeten worden.
 
    <aside class="example">
     Er zijn twee Actions:  
@@ -369,7 +368,7 @@ De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onder
     Deze heeft de waarde urn:osb:oin voor PartyId's met een OIN.(Dit is ook de default waarde voor de CPA's zoals die door het CPA register wordt gehanteerd.)
 
     De PartyId type wordt als volgt opgenomen in het ebMS2 contract (met een voorbeeld van de PartyId waarde “0123456789”):  
-        
+
     ```XML
     <tns:PartyId tns:type="urn:osb:oin">123456789</tns:PartyId>
     ```
@@ -381,14 +380,14 @@ De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onder
     Deze heeft de volgende verplichte waarde, waarbij alleen de timeToPerform een andere waarde kan krijgen (afhankelijk van de timing karakteristieken van de RequestingBusinessActivity en de RespondingBusinessActivity):
 
 ```XML
-<tns:BusinessTransactionCharacteristics 
+<tns:BusinessTransactionCharacteristics
     tns:isAuthenticated="transient"
-    tns:isAuthorizationRequired="true" 
+    tns:isAuthorizationRequired="true"
     tns:isConfidential="transient"
     tns:isIntelligibleCheckRequired="false"
     tns:isNonRepudiationReceiptRequired="false"
-    tns:isNonRepudiationRequired="false" 
-    tns:isTamperProof="transient" 
+    tns:isNonRepudiationRequired="false"
+    tns:isTamperProof="transient"
     tns:timeToPerform="P2D"/>
 ```
 
@@ -438,7 +437,7 @@ voor de actuele versies van het te gebruiken protocol bij de uitwisseling zie [[
     Deze heeft default een retryCount van 8 en een retryInterval van 3 uur, zonder MessageOrder:
 
     ```XML
-    <tns:MessagingCharacteristics tns:syncReplyMode="none" 
+    <tns:MessagingCharacteristics tns:syncReplyMode="none"
     tns:ackRequested="always" tns:actor="urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH"
     tns:ackSignatureRequested="never"    tns:duplicateElimination="always"/>
     ```
@@ -615,11 +614,11 @@ Als uitgangspunt voor de realisatie van de volgordelijkheid kan het Resequencer 
 
 A [Message Router](http://www.enterpriseintegrationpatterns.com/MessageRouter.html) can route messages from one channel to different channels based on message content or other criteria. Because individual messages may follow different routes, some messages are likely to pass through the processing steps sooner than others, resulting in the messages getting out of order. However, some subsequent processing steps do require in-sequence processing of messages, for example to maintain referential integrity.
 
-**How can we get a stream of related but out-of-sequence messages back into the correct order?**
+*How can we get a stream of related but out-of-sequence messages back into the correct order?*
 
 ![Resequencer Pattern](media/resequencer_pattern.png "Resequencer Pattern")
 
-**Use a stateful filter, a Resequencer, to collect and re-order messages so that they can be published to the output channel in a specified order.**
+*Use a stateful filter, a Resequencer, to collect and re-order messages so that they can be published to the output channel in a specified order.*
 
 The Resequencer can receive a stream of messages that may not arrive in order. The Resequencer contains in internal buffer to store out-of-sequence messages until a complete sequence is obtained. The in-sequence messages are then published to the output channel. It is important that the output channel is order-preserving so messages are guaranteed to arrive in order at the next component. Like most other routers, a Resequencer usually does not modify the message contents.  
 
