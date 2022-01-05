@@ -16,7 +16,9 @@ Het document is bestemd voor Architecten, integratie specialisten en ontwikkelaa
 
 Digikoppeling is beschreven in een set van documenten. Deze set is als volgt opgebouwd:
 
-![Opbouw documentatie Digikoppeling](media/DK_Specificatie_structuur.png "Opbouw documentatie Digikoppeling")
+![Overzicht van de onderdelen van de Digikoppeling Standaard, de standaard is onderverdeeld in normatieve en ondersteunende onderdelen](https://publicatie.centrumvoorstandaarden.nl/alg/media/DK_Specificatie_structuur.svg "Opbouw documentatie Digikoppeling")
+
+
 
 Alle met de kleur groen aangegeven documenten vallen onder het beheer zoals geformaliseerd in het Beheermodel en releasebeleid.
 
