@@ -58,13 +58,12 @@ var respecConfig = {
   //Adds a JSON-LD script element containing schema.org information, which can be useful for search engines.
   doJsonLd: true,
 
-  // since status is CV no pdf
-  // alternateFormats: [
-  //   {
-  //     label: "pdf",
-  //     uri: "Digikoppeling-Best-Practices-ebMS2.pdf",
-  //   },
-  // ],
+  alternateFormats: [
+    {
+      label: "pdf",
+      uri: "Digikoppeling-Best-Practices-ebMS2.pdf",
+    },
+  ],
 
   // An array of person objects describing the editors of the document
   // this can be simple or more elaborated
