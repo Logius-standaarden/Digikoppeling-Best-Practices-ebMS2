@@ -204,7 +204,7 @@ var respecConfig = {
       publisher: "Oasis",
     },
     "Digikoppeling Beveiligingsdocument": {
-      href: "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/"
+      href: "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/",
       title: "Digikoppeling Beveiligingsstandaarden en voorschriften",
       date: "2021",
       publisher: "Logius",
