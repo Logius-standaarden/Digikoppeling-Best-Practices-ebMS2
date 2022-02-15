@@ -54,7 +54,7 @@ Digikoppeling is beschreven in een set van documenten. Deze set is als volgt opg
 							</li>
 							<li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/restapi/">DK Koppelvlakstandaard REST API</a>*
 								<ul>
-									<li> <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpgb">Best-practice REST API</a></i>†</li>
+									<li> <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/restapi">Best-practice REST API</a></i>†</li>
 								</ul>
 							</li>
 						</ul>
