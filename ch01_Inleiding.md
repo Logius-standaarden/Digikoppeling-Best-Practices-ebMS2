@@ -37,6 +37,11 @@ Digikoppeling is beschreven in een set van documenten. Deze set is als volgt opg
 					<li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/">DK Beveiligingsstandaarden en voorschriften</a>* </li>
 					<li>Koppelvlakstandaarden
 						<ul>
+							<li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/restapi/">DK Koppelvlakstandaard REST-API</a>*
+								<ul>
+									<li><i>Best-practice REST-API</i>† </li>
+								</ul>
+							</li>
 							<li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/wus/">DK Koppelvlakstandaard WUS</a>*
 								<ul>
 									<li><i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpwus">Best-practice WUS</a></i>† </li>
@@ -50,11 +55,6 @@ Digikoppeling is beschreven in een set van documenten. Deze set is als volgt opg
 							<li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/gb/">DK Koppelvlakstandaard Grote Berichten</a>*
 								<ul>
 									<li> <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/bpgb">Best-practice Grote Berichten</a></i>†</li>
-								</ul>
-							</li>
-							<li> <a href="https://publicatie.centrumvoorstandaarden.nl/dk/restapi/">DK Koppelvlakstandaard REST API</a>*
-								<ul>
-									<li> <i><a href="https://publicatie.centrumvoorstandaarden.nl/dk/restapi">Best-practice REST API</a></i>†</li>
 								</ul>
 							</li>
 						</ul>
