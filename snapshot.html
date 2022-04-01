@@ -549,7 +549,7 @@ Voor een terugmelding  op de GBA met MessageId 1234 moet de GBA in het antwoord 
   </div>
 Binnen het Justitie-domein is een goed voorbeeld hiervan het proces van de identiteitsvaststelling, waarbij één verzoek resulteert in meldingen naar meerdere registers waarna uiteindelijk een gecombineerd antwoord wordt teruggestuurd naar de Politie. Bij alle meldingen in één identiteitsvaststelling wordt hetzelfde ConversationId gebruikt, maar uiteraard hebben ze allemaal wel unieke MessageId’s (met bijbehorende RefToMessageId’s voor de antwoorden).
 </aside><p>In een losstaande transactie heeft het ConversationId dus niet zoveel toegevoegde waarde. Die toegevoegde waarde onstaat pas op het moment dat meerdere transacties door middel van het overkoepelende ConversationId met elkaar verbonden worden.</p></section></section></section>
-<section data-format="markdown" id="cpa-gebruik-en-kenmerken"><h2 id="x3-cpa-gebruik-en-kenmerken"><bdi class="secno">3. </bdi>CPA Gebruik en Kenmerken<a class="self-link" href="#cpa-gebruik-en-kenmerken" aria-label="Permalink for Section 3."></a></h2><section id="inleiding-0"><h3 id="x3-1-inleiding"><bdi class="secno">3.1 </bdi>Inleiding<a class="self-link" href="#inleiding-0" aria-label="Permalink for Section 3.1"></a></h3><p>Digikoppeling 1.0 Koppelvlakstandaard definieert twee protocollen (WUS en ebMS2) voor de overdracht van gegevens via Digikoppeling. Dit document gaat in op het gebruik van een Collaboration Protocol Agreement (CPA) in het geval dat ebMS2 gebruikt wordt voor de gegevensoverdracht.</p></section><section id="wat-is-een-cpa"><h3 id="x3-2-wat-is-een-cpa"><bdi class="secno">3.2 </bdi>Wat is een CPA?<a class="self-link" href="#wat-is-een-cpa" aria-label="Permalink for Section 3.2"></a></h3><p>Een CPA is een formeel xml document om de gebruikte functionele en technische eigenschappen van de ebMS2 protocol-karakteristieken vast te leggen. Het is dus een formele beschrijving voor het vastleggen van de gegevensuitwisseling.</p><p>De CPA is gestandaardiseerd in [ISO 15000-1: ebXML Collaborative Partner Profile Agreement (afgekort tot ebCPP<sup>3</sup>). Het ebMS2 protocol is gestandaardiseerd in ebXML Messaging Service Specification (afgekort tot ebMS2<sup>4</sup>).</p><p><sup>3</sup>: [<cite><a class="bibref" data-link-type="biblio" href="#bib-ebcpp" title="Collaboration-Protocol Profile and Agreement Specification Version 2.0">ebCPP</a></cite>] Collaboration-Protocol Profile and Agreement Specification Version 2.0, September 23, 2002. Url: <a href="http://www.oasis-open.org/committees/ebxml-cppa/documents/ebcpp-2.0c.pdf">http://www.oasis-open.org/committees/ebxml-cppa/documents/ebcpp-2.0c.pdf</a></p><p><sup>4</sup>: Message Service Specification, Version 2.0, 1 April 2002. Url: <a href="http://www.oasis-open.org/committees/ebxml-msg/documents/ebMS_v2_0.pdf">http://www.oasis-open.org/committees/ebxml-msg/documents/ebMS_v2_0.pdf</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ebxml-msg" title="OASIS ebXML Message Service Specification">EBXML-MSG</a></cite>]</p><p>De eigenschappen van de gegevensoverdracht geven onder andere aan:</p><ul>
+<section id="cpa-gebruik-en-kenmerken"><h2 id="x3-cpa-gebruik-en-kenmerken"><bdi class="secno">3. </bdi>CPA Gebruik en Kenmerken<a class="self-link" href="#cpa-gebruik-en-kenmerken" aria-label="Permalink for Section 3."></a></h2><section id="inleiding-0"><h3 id="x3-1-inleiding"><bdi class="secno">3.1 </bdi>Inleiding<a class="self-link" href="#inleiding-0" aria-label="Permalink for Section 3.1"></a></h3><p>Digikoppeling 1.0 Koppelvlakstandaard definieert twee protocollen (WUS en ebMS2) voor de overdracht van gegevens via Digikoppeling. Dit document gaat in op het gebruik van een Collaboration Protocol Agreement (CPA) in het geval dat ebMS2 gebruikt wordt voor de gegevensoverdracht.</p></section><section id="wat-is-een-cpa"><h3 id="x3-2-wat-is-een-cpa"><bdi class="secno">3.2 </bdi>Wat is een CPA?<a class="self-link" href="#wat-is-een-cpa" aria-label="Permalink for Section 3.2"></a></h3><p>Een CPA is een formeel xml document om de gebruikte functionele en technische eigenschappen van de ebMS2 protocol-karakteristieken vast te leggen. Het is dus een formele beschrijving voor het vastleggen van de gegevensuitwisseling.</p><p>De CPA is gestandaardiseerd in [ISO 15000-1: ebXML Collaborative Partner Profile Agreement (afgekort tot ebCPP<sup>3</sup>). Het ebMS2 protocol is gestandaardiseerd in ebXML Messaging Service Specification (afgekort tot ebMS2<sup>4</sup>).</p><p><sup>3</sup>: [<cite><a class="bibref" data-link-type="biblio" href="#bib-ebcpp" title="Collaboration-Protocol Profile and Agreement Specification Version 2.0">ebCPP</a></cite>] Collaboration-Protocol Profile and Agreement Specification Version 2.0, September 23, 2002. Url: <a href="http://www.oasis-open.org/committees/ebxml-cppa/documents/ebcpp-2.0c.pdf">http://www.oasis-open.org/committees/ebxml-cppa/documents/ebcpp-2.0c.pdf</a></p><p><sup>4</sup>: Message Service Specification, Version 2.0, 1 April 2002. Url: <a href="http://www.oasis-open.org/committees/ebxml-msg/documents/ebMS_v2_0.pdf">http://www.oasis-open.org/committees/ebxml-msg/documents/ebMS_v2_0.pdf</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ebxml-msg" title="OASIS ebXML Message Service Specification">EBXML-MSG</a></cite>]</p><p>De eigenschappen van de gegevensoverdracht geven onder andere aan:</p><ul>
 <li><p>tussen welke partijen er informatie uitgewisseld wordt;</p>
 </li>
 <li><p>welke services en actions ('functies') er zijn waar de berichtuitwisseling op wordt gebaseerd;</p>
@@ -576,7 +576,7 @@ Binnen het Justitie-domein is een goed voorbeeld hiervan het proces van de ident
 <p>  <code>[organisatie]:[service]:[versie]</code></p>
 <p>  De service heeft als type “urn:osb:services” (zonder quotes).</p>
 <p>  Een service wordt als volgt in het ebMS2 contract opgenomen (met een voorbeeld service “OSB:Service:1:0”):  </p>
-<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:service</span> <span class="hljs-attr">tns:type</span>=<span class="hljs-string">"urn:osb:services"</span>&gt;</span>OSB:Service:1:0<span class="hljs-tag">&lt;/<span class="hljs-name">tns:service</span>&gt;</span>
+<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:Service</span> <span class="hljs-attr">tns:type</span>=<span class="hljs-string">"urn:osb:services"</span>&gt;</span>OSB:Service:1:0<span class="hljs-tag">&lt;/<span class="hljs-name">tns:Service</span>&gt;</span>
 </code></pre>
 </li>
 <li><p>CPAId</p>
@@ -617,16 +617,24 @@ Binnen het Justitie-domein is een goed voorbeeld hiervan het proces van de ident
 <li><p>PartyId Type</p>
 <p>  Deze heeft de waarde urn:osb:oin voor PartyId's met een OIN.(Dit is ook de default waarde voor de CPA's zoals die door het CPA register wordt gehanteerd.)</p>
 <p>  De PartyId type wordt als volgt opgenomen in het ebMS2 contract (met een voorbeeld van de PartyId waarde “0123456789”):  </p>
-<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:partyid</span> <span class="hljs-attr">tns:type</span>=<span class="hljs-string">"urn:osb:oin"</span>&gt;</span>123456789<span class="hljs-tag">&lt;/<span class="hljs-name">tns:partyid</span>&gt;</span>
+<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:PartyId</span> <span class="hljs-attr">tns:type</span>=<span class="hljs-string">"urn:osb:oin"</span>&gt;</span>123456789<span class="hljs-tag">&lt;/<span class="hljs-name">tns:PartyId</span>&gt;</span>
 </code></pre>
 <p>  Het is toegestaan om een andere PartyId type te hanteren als de organisatie reeds andersoortige (geen OIN's) PartyId’s heeft voor de organisatie identificatie. Het moge duidelijk zijn dat het in overleg met de samenwerkende organisaties vastgesteld moet worden. Zie ook EB014 in hoofdstuk 2.</p>
 </li>
 <li><p>BusinessCharacteristics</p>
 <p>  Deze heeft de volgende verplichte waarde, waarbij alleen de timeToPerform een andere waarde kan krijgen (afhankelijk van de timing karakteristieken van de RequestingBusinessActivity en de RespondingBusinessActivity):</p>
 </li>
-</ul><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:businesstransactioncharacteristics</span> <span class="hljs-attr">tns:isauthenticated</span>=<span class="hljs-string">"transient"</span> <span class="hljs-attr">tns:isauthorizationrequired</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">tns:isconfidential</span>=<span class="hljs-string">"transient"</span> <span class="hljs-attr">tns:isintelligiblecheckrequired</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">tns:isnonrepudiationreceiptrequired</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">tns:isnonrepudiationrequired</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">tns:istamperproof</span>=<span class="hljs-string">"transient"</span> <span class="hljs-attr">tns:timetoperform</span>=<span class="hljs-string">"P2D"</span>&gt;</span>
-</code></pre><p>TransportProtocol over HTTP met TLS met server certificaat.<br>Deze hebben de verplichte waardes:</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:transportprotocol</span> <span class="hljs-attr">tns:version</span>=<span class="hljs-string">"1.1"</span>&gt;</span>HTTP<span class="hljs-tag">&lt;/<span class="hljs-name">tns:transportprotocol</span>&gt;</span>
-</code></pre><p>en voor bijvoorbeeld versie 1 van TLS</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:transportsecurityprotocol</span> <span class="hljs-attr">tns:version</span>=<span class="hljs-string">"1.0"</span>&gt;</span>TLS<span class="hljs-tag">&lt;/<span class="hljs-name">tns:transportsecurityprotocol</span>&gt;</span>
+</ul><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:BusinessTransactionCharacteristics</span>
+    <span class="hljs-attr">tns:isAuthenticated</span>=<span class="hljs-string">"transient"</span>
+    <span class="hljs-attr">tns:isAuthorizationRequired</span>=<span class="hljs-string">"true"</span>
+    <span class="hljs-attr">tns:isConfidential</span>=<span class="hljs-string">"transient"</span>
+    <span class="hljs-attr">tns:isIntelligibleCheckRequired</span>=<span class="hljs-string">"false"</span>
+    <span class="hljs-attr">tns:isNonRepudiationReceiptRequired</span>=<span class="hljs-string">"false"</span>
+    <span class="hljs-attr">tns:isNonRepudiationRequired</span>=<span class="hljs-string">"false"</span>
+    <span class="hljs-attr">tns:isTamperProof</span>=<span class="hljs-string">"transient"</span>
+    <span class="hljs-attr">tns:timeToPerform</span>=<span class="hljs-string">"P2D"</span>/&gt;</span>
+</code></pre><p>TransportProtocol over HTTP met TLS met server certificaat.<br>Deze hebben de verplichte waardes:</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:TransportProtocol</span> <span class="hljs-attr">tns:version</span>=<span class="hljs-string">"1.1"</span>&gt;</span>HTTP<span class="hljs-tag">&lt;/<span class="hljs-name">tns:TransportProtocol</span>&gt;</span>
+</code></pre><p>en voor bijvoorbeeld versie 1 van TLS</p><pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:TransportSecurityProtocol</span> <span class="hljs-attr">tns:version</span>=<span class="hljs-string">"1.0"</span>&gt;</span>TLS<span class="hljs-tag">&lt;/<span class="hljs-name">tns:TransportSecurityProtocol</span>&gt;</span>
 </code></pre><aside class="note">
 voor de actuele versies van het te gebruiken protocol bij de uitwisseling zie [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling beveiligingsdocument" title="Digikoppeling Beveiligingsstandaarden en voorschriften">Digikoppeling Beveiligingsdocument</a></cite>]
 </aside><ul>
@@ -637,32 +645,44 @@ voor de actuele versies van het te gebruiken protocol bij de uitwisseling zie [<
 </li>
 <li><p>MessageOrder</p>
 <p>  De MessageOrder geeft aan of er wel of geen gebruik gemaakt wordt van ordening van berichten. De default waarde voor MessageOrder is “NotGuaranteed” en wordt als volgt opgenomen in het ebMS2 contract:</p>
-<pre><code class="XML hljs xml" aria-busy="false">    <span class="hljs-tag">&lt;<span class="hljs-name">tns:messageordersemantics</span>&gt;</span>NotGuaranteed<span class="hljs-tag">&lt;/<span class="hljs-name">tns:messageordersemantics</span>&gt;</span>
+<pre><code class="XML hljs xml" aria-busy="false">    <span class="hljs-tag">&lt;<span class="hljs-name">tns:MessageOrderSemantics</span>&gt;</span>NotGuaranteed<span class="hljs-tag">&lt;/<span class="hljs-name">tns:MessageOrderSemantics</span>&gt;</span>
 </code></pre>
 <p>  Indien er wel gebruik gemaakt wordt van MessageOrder is de waarde:</p>
-<pre><code class="XML hljs xml" aria-busy="false">    <span class="hljs-tag">&lt;<span class="hljs-name">tns:messageordersemantics</span>&gt;</span>Guaranteed<span class="hljs-tag">&lt;/<span class="hljs-name">tns:messageordersemantics</span>&gt;</span>
+<pre><code class="XML hljs xml" aria-busy="false">    <span class="hljs-tag">&lt;<span class="hljs-name">tns:MessageOrderSemantics</span>&gt;</span>Guaranteed<span class="hljs-tag">&lt;/<span class="hljs-name">tns:MessageOrderSemantics</span>&gt;</span>
 </code></pre>
 </li>
 </ul><aside class="note"> MessageOrder wordt niet door alle ebMS-adapters implementaties ondersteund. Als het wel het geval is zal de interoperabiliteit goed getest moeten worden. Zie hoofdstuk “Het gebruik van bericht volgordelijkheid”.
 </aside><ul>
 <li><p>ReliableMessaging</p>
 <p>  Deze heeft default een retryCount van 8 en een retryInterval van 3 uur, zonder MessageOrder:</p>
-<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:messagingcharacteristics</span> <span class="hljs-attr">tns:syncreplymode</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">tns:ackrequested</span>=<span class="hljs-string">"always"</span> <span class="hljs-attr">tns:actor</span>=<span class="hljs-string">"urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH"</span> <span class="hljs-attr">tns:acksignaturerequested</span>=<span class="hljs-string">"never"</span> <span class="hljs-attr">tns:duplicateelimination</span>=<span class="hljs-string">"always"</span>&gt;</span>
+<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:MessagingCharacteristics</span> <span class="hljs-attr">tns:syncReplyMode</span>=<span class="hljs-string">"none"</span>
+<span class="hljs-attr">tns:ackRequested</span>=<span class="hljs-string">"always"</span> <span class="hljs-attr">tns:actor</span>=<span class="hljs-string">"urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH"</span>
+<span class="hljs-attr">tns:ackSignatureRequested</span>=<span class="hljs-string">"never"</span>    <span class="hljs-attr">tns:duplicateElimination</span>=<span class="hljs-string">"always"</span>/&gt;</span>
 </code></pre>
 <p>  De waardes kunnen per CPA bepaald worden, en liggen dus niet bij voorbaat vast.</p>
 <p>  In het geval dat MessageOrder wel gebruikt wordt, komt in de CPA:</p>
-<p>  <a href="tns:messageordersemantics">tns:messageordersemantics</a>Guaranteed</p>
+<p>  <a href="tns:MessageOrderSemantics">tns:MessageOrderSemantics</a>Guaranteed</p>
 <p>  Conform de ebMS2 specificatie zal de applicatie dezelfde ConversationId moeten gebruiken voor de opeenvolgende berichten<sup>5</sup>.</p>
 <p>  <sup>5</sup>: [<cite><a class="bibref" data-link-type="biblio" href="#bib-ebxml-msg" title="OASIS ebXML Message Service Specification">EBXML-MSG</a></cite>] H9.1.1 “The REQUIRED SequenceNumber element indicates the sequence a Receiving MSH MUST process messages. The SequenceNumber <strong>is unique within</strong> the ConversationId and MSH.”</p>
 </li>
 <li><p>PersistDuration</p>
 <p>  Deze heeft default de waarde van 1 dag, maar zal anders zijn als er andere waardes voor ReliableMessaging gebruikt worden:</p>
-<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:persistduration</span>&gt;</span>P1D<span class="hljs-tag">&lt;/<span class="hljs-name">tns:persistduration</span>&gt;</span>
+<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:PersistDuration</span>&gt;</span>P1D<span class="hljs-tag">&lt;/<span class="hljs-name">tns:PersistDuration</span>&gt;</span>
 </code></pre>
 </li>
 <li><p>MessagingCharacteristic</p>
 <p>  Deze heeft de waarde:</p>
-<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:messagingcharacteristics</span> <span class="hljs-attr">tns:syncreplymode</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">tns:ackrequested</span>=<span class="hljs-string">"always"</span> <span class="hljs-attr">tns:actor</span>=<span class="hljs-string">"urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH"</span> <span class="hljs-attr">tns:acksignaturerequested</span>=<span class="hljs-string">"never"</span> <span class="hljs-attr">tns:duplicateelimination</span>=<span class="hljs-string">"always"</span>&gt;</span>
+<pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:MessagingCharacteristics</span>
+
+<span class="hljs-attr">tns:syncReplyMode</span>=<span class="hljs-string">"none"</span>
+
+<span class="hljs-attr">tns:ackRequested</span>=<span class="hljs-string">"always"</span>
+
+<span class="hljs-attr">tns:actor</span>=<span class="hljs-string">"urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH"</span>
+
+<span class="hljs-attr">tns:ackSignatureRequested</span>=<span class="hljs-string">"never"</span>
+
+<span class="hljs-attr">tns:duplicateElimination</span>=<span class="hljs-string">"always"</span>/&gt;</span>
 </code></pre>
 <p>  Geen gebruik van Signing of (payload) Encryption. (Alleen op HTTP nivo wordt informatie beveiligd)</p>
 <p>  Er moet gebruik gemaakt worden van certificaten die voldoen aan de eisen van de PKI Overheid.</p>
@@ -672,7 +692,7 @@ voor de actuele versies van het te gebruiken protocol bij de uitwisseling zie [<
 </li>
 <li><p>De technische gegevens van een ebMS-gateway van een organisatie, zoals de te hanteren transport URL, de publieke sleutels van de client en server certificaten ende PartyId van de organisatie</p>
 </li>
-</ul><p>In het document 'Digikoppeling CPA Creatiehandleiding' is te lezen met welke gegevens een CPA gemaakt wordt, in combinatie met Digikoppeling CPA Creatievoorziening.</p><table class="dkkvs">
+</ul><p>In het document 'Digikoppeling CPA Creatiehandleiding' is te lezen met welke gegevens een CPA gemaakt wordt, in combinatie met Digikoppeling CPA Creatievoorziening.</p><table>
 <thead>
 <tr>
 <th><strong>Meer informatie</strong></th>
@@ -685,7 +705,7 @@ voor de actuele versies van het te gebruiken protocol bij de uitwisseling zie [<
 <td><a href="https://www.logius.nl/diensten/digikoppeling/aanvragen/voorbereiden">https://www.logius.nl/diensten/digikoppeling/aanvragen/voorbereiden</a></td>
 <td>[A&amp;D] [OT&amp;B]</td>
 </tr>
-</tbody></table><p></p></section></section>
+</tbody></table></section></section>
 <section data-format="markdown" id="het-gebruik-van-berichtvolgordelijkheid"><h2 id="x4-het-gebruik-van-berichtvolgordelijkheid"><bdi class="secno">4. </bdi>Het gebruik van berichtvolgordelijkheid<a class="self-link" href="#het-gebruik-van-berichtvolgordelijkheid" aria-label="Permalink for Section 4."></a></h2><p>Digikoppeling Koppelvlakstandaard ebMS2 raadt het gebruik van volgordelijkheid van berichten sterk af. Reden hiervoor is dat niet elk product dat ebMS2 implementeert de volgordelijkheid ondersteunt (in ebMS2 wordt dit MessageOrder genoemd). Voor situaties waar beide partijen bi-lateraal over een product beschikken dat dit ondersteund, wordt het gebruik ervan voor het Digikoppeling ebMS2 Koppelvlak wel toegestaan. Voorwaarde daarbij is dat vooraf bekend is dat alle (ook toekomstige) communicatiepartners dit kunnen ondersteunen. Gebruik lijkt daarom alleen realistisch voor bilaterale situaties of een zeer beperkt aantal vooraf bekende communicatiepartners. Gebruik door landelijke voorzieningen zoals basisregistraties is onwenselijk.</p><p>Partijen die gebruik willen maken van de volgordelijkheid zullen daarom vooraf onderling moeten verifiëren of de functionaliteit door de andere partij ondersteund wordt en of de ebMS-adapters op dit onderdeel ook interoperabel zijn. (Het moge duidelijk zijn dat als beide partijen van hetzelfde product gebruik maken, de interoperabiliteit gegarandeerd zou moeten zijn.)</p><p>Het heeft tot gevolg dat veel partijen deze functionaliteit niet kunnen gebruiken. In deze situaties is volgordelijkheid op applicatieniveau een beter alternatief. Dit heeft als extra voordeel dat niet alleen zekeerheid bestaat over het in volgorde ontvangen, maar ook over het in volgorde verwerken van berichten.</p><p>De granulariteit (zie hieronder) van de berichten waarop volgordelijkheid toegepast moet worden en de verwerking in de organisatie zal nader bekeken moeten worden. De volgende twee hoofdstukken geven hierover enkele overwegingen.</p><section id="granulariteit"><h3 id="x4-1-granulariteit"><bdi class="secno">4.1 </bdi>Granulariteit<a class="self-link" href="#granulariteit" aria-label="Permalink for Section 4.1"></a></h3><p>Granulariteit betekent letterlijk: (fijn)korreligheid, ofwel de mate van detaillering. De granulariteit van de berichten waarvoor volgordelijkheid van belang is zal verstandig moeten worden gekozen.</p><p>De uitersten worden hieronder beschreven:</p><ul>
 <li><p>Alle berichten die op basis van een ebMS2 contract (CPA) verzonden worden zijn van elkaar afhankelijk ten aanzien van de volgorde.</p>
 <ul>
@@ -792,6 +812,7 @@ voor de actuele versies van het te gebruiken protocol bij de uitwisseling zie [<
 
     
     
+
 
 
 
