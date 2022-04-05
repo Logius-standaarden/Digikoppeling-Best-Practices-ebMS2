@@ -2,7 +2,7 @@
 
 ## Inleiding
 
-Digikoppeling 1.0 Koppelvlakstandaard definieert twee protocollen (WUS en ebMS2) voor de overdracht van gegevens via Digikoppeling. Dit document gaat in op het gebruik van een Collaboration Protocol Agreement (CPA) in het geval dat ebMS2 gebruikt wordt voor de gegevensoverdracht.
+Digikoppeling bevat de ebMS2 koppelvlakstandaard voor de overdracht van gegevens. Dit document gaat in op het gebruik van een Collaboration Protocol Agreement (CPA) in het geval dat ebMS2 gebruikt wordt voor de gegevensoverdracht.
 
 ## Wat is een CPA?
 
