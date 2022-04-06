@@ -7,4 +7,4 @@
 | 13-01-2015 | 3.0    | Logius | Redactioneel  |
 | 01-10-2017 | 3.1    | Logius | Herzien nav:  - Compliance Voorziening  - Begrippen ebMS2 en CPA   Register |
 | 16-05-2019 | 3.2    | Logius | EB015 SyncReply toegevoegd  |
-
+| 11/04/2022 | 3.2.1  | Logius | Vermelding REST-API koppelvlak  |
