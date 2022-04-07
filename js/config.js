@@ -174,7 +174,7 @@ var respecConfig = {
       publisher: "Nederlands Normalisatie-instituut",
     },
     "Digikoppeling Architectuur": {
-      href: "https://centrumvoorstandaarden.github.io/Architectuur2.0-metRestfulAPI/static.html",
+      href: "https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/",
       title:
         "Digikoppeling Architectuur",
       authors: ["Logius Centrum voor standaarden"],
@@ -192,7 +192,6 @@ var respecConfig = {
     "Digikoppeling Beveiligingsdocument": {
       href: "https://publicatie.centrumvoorstandaarden.nl/dk/beveilig/",
       title: "Digikoppeling Beveiligingsstandaarden en voorschriften",
-      date: "2021",
       publisher: "Logius",
     },
     "Digikoppeling-Cert": {
