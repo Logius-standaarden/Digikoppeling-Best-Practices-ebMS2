@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 32.1.2 Logius profile 20220405">
+<meta name="generator" content="ReSpec 32.1.10 Logius profile 20220628">
 <style>
 span.example-title{text-transform:none}
 :is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
@@ -12,8 +12,21 @@ aside.example div.example{border-left-width:.1em;border-color:#999;background:#f
 .example pre{background-color:rgba(0,0,0,.03)}
 </style>
 <style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
 dfn{cursor:pointer}
-.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
 .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
 .dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
 .dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
@@ -255,7 +268,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 }</script>
 <link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/LS-VG.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.logius.nl/standaarden"><img alt="Logius" height="77" id="Logius" src="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
   </a> <h1 id="title" class="title">Digikoppeling Best Practices ebMS2 3.2.1</h1>
     
@@ -416,7 +429,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </tbody></table>
 </section><section id="opbouw-digikoppeling-documentatie"><div class="header-wrapper"><h3 id="x1-2-opbouw-digikoppeling-documentatie"><bdi class="secno">1.2 </bdi>Opbouw Digikoppeling documentatie</h3><a class="self-link" href="#opbouw-digikoppeling-documentatie" aria-label="Permalink for Section 1.2"></a></div>
 <p>Digikoppeling is beschreven in een set van documenten. Deze set is als volgt opgebouwd:</p>
-<p><figure id="fig-opbouw-documentatie-digikoppeling"><img src="media/DK_Specificatie_structuur.svg" alt="Overzicht van de onderdelen van de Digikoppeling Standaard, de standaard is onderverdeeld in normatieve en ondersteunende onderdelen" title="Opbouw documentatie Digikoppeling"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></figcaption></figure></p>
+<p><figure id="fig-opbouw-documentatie-digikoppeling"><img src="media/DK_Specificatie_structuur.svg" alt="Overzicht van de onderdelen van de Digikoppeling Standaard, de standaard is onderverdeeld in normatieve en ondersteunende onderdelen" title="Opbouw documentatie Digikoppeling" height="837" width="1327"><figcaption>Figuur <bdi class="figno">1</bdi> <span class="fig-title">Opbouw documentatie Digikoppeling</span></figcaption></figure></p>
 <details>
     <summary> Tekstalternatief </summary>
 <ul>
@@ -620,9 +633,9 @@ Een abonnementen service biedt de mogelijkheid om organisaties zich te laten ins
 <li><p>Voorwaarde: De Digikoppeling oplossing van beide partijen ondersteunen het instellen van SyncReplymode op mshSignalsOnly. Het instellen van deze mode kan dus niet eenzijdig worden opgelegd.</p>
 </li>
 </ul>
-<aside class="note">
+<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Noot</span></div><aside class="">
     Indien de berichtuitwisseling via een intermediary verloopt dient deze ook de SyncReplymode te ondersteunen om de synchrone communicatie tussen partijen mogelijk te maken.
-</aside>
+</aside></div>
 
 </section></section><section id="eb016-correlatie-van-berichten"><div class="header-wrapper"><h3 id="x2-16-eb016-correlatie-van-berichten"><bdi class="secno">2.16 </bdi>EB016 Correlatie van berichten</h3><a class="self-link" href="#eb016-correlatie-van-berichten" aria-label="Permalink for Section 2.16"></a></div>
 <p>Voor het correleren van berichten in ebMS2 spelen de elementen <em>Messageid</em>, <em>ConversationId</em> en <em>RefToMessageId</em> een rol. Het gebruik van de combinatie <em>MessageId</em> en <em>RefToMessageId</em> en het <em>ConversationId</em> dienen verschillende doelen.</p>
@@ -762,9 +775,9 @@ Binnen het Justitie-domein is een goed voorbeeld hiervan het proces van de ident
 <p>en voor bijvoorbeeld versie 1 van TLS</p>
 <pre><code class="XML hljs xml" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">tns:TransportSecurityProtocol</span> <span class="hljs-attr">tns:version</span>=<span class="hljs-string">"1.0"</span>&gt;</span>TLS<span class="hljs-tag">&lt;/<span class="hljs-name">tns:TransportSecurityProtocol</span>&gt;</span>
 </code></pre>
-<aside class="note">
+<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Noot</span></div><aside class="">
 voor de actuele versies van het te gebruiken protocol bij de uitwisseling zie [<cite><a class="bibref" data-link-type="biblio" href="#bib-digikoppeling beveiligingsdocument" title="Digikoppeling Beveiligingsstandaarden en voorschriften">Digikoppeling Beveiligingsdocument</a></cite>]
-</aside>
+</aside></div>
 
 <ul>
 <li><p>Client Authentication over HTTP met client certificaat. Dit is verplicht. In het client certificaat staat in het subject.Serialnumber de PartyId van de ‘client’ organisatie.</p>
@@ -781,8 +794,8 @@ voor de actuele versies van het te gebruiken protocol bij de uitwisseling zie [<
 </code></pre>
 </li>
 </ul>
-<aside class="note"> MessageOrder wordt niet door alle ebMS-adapters implementaties ondersteund. Als het wel het geval is zal de interoperabiliteit goed getest moeten worden. Zie hoofdstuk “Het gebruik van bericht volgordelijkheid”.
-</aside>
+<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Noot</span></div><aside class=""> MessageOrder wordt niet door alle ebMS-adapters implementaties ondersteund. Als het wel het geval is zal de interoperabiliteit goed getest moeten worden. Zie hoofdstuk “Het gebruik van bericht volgordelijkheid”.
+</aside></div>
 
 <ul>
 <li><p>ReliableMessaging</p>
