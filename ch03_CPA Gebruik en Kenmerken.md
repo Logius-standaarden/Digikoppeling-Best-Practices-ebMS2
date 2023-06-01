@@ -49,8 +49,6 @@ De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onder
 
 ### Service
 
-- Service
-
     Een Service is een unieke aanduiding voor een set van samenhangende operaties.
 
     De service moet uniek zijn. Advies voor de naamgeving is als volgt:
