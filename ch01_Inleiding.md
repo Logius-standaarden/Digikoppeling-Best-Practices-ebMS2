@@ -104,7 +104,7 @@ Hoofdstuk 3 gaat in op de kenmerken van een CPA.
 
 Hoofdstuk 4 gaat over bericht volgordelijkheid.
 
-> Begrippen en afkortingen worden toegelicht in het document “DigikoppelingArchitectuur”.  
+> Begrippen en afkortingen worden toegelicht in het document [[Digikoppeling-Architectuur]].  
 > Dit document is onderdeel van de Digikoppeling standaard.
 
 <div class="note">Dit document en alle andere Digikoppeling documentatie is beschikbaar op <a href="http://www.logius.nl/digikoppeling">Logius.nl/digikoppeling</a>.
