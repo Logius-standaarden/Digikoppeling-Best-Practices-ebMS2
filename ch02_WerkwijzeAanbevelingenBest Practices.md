@@ -2,7 +2,7 @@
 
 ## EB001 ebMS2 Producten
 
-Gebruik een ebMS2 product met aantoonbare ervaring binnen het Digikoppeling domein. Op de website van Logius is een overzicht van Digikoppeling leveranciers te vinden en ook in de marktscan van VNG Realisatie en Logius is een overzicht te vinden van het aanbod van Digikoppeling adapters dat voldoet aan de eisen die VNG Realisatie stelt aan een Digikoppeling Adapter voor de gemeentelijke markt.
+Gebruik een ebMS2 product met aantoonbare ervaring binnen het Digikoppeling domein. Op de [website van Logius is een overzicht van Digikoppeling leveranciers](https://logius.nl/domeinen/gegevensuitwisseling/digikoppeling/ict-leveranciers) te vinden. De [GEMMA softwarecatalogus](https://www.softwarecatalogus.nl/pakketten?zoek=digikoppeling+ebms) van de VNG geeft een overzicht van softwareproducten voor de gemeentelijke markt die de Digikoppeling ebMS koppelvlakspecificatie ondersteunen.
 
 ## EB002 CPA Gebruik
 
@@ -10,7 +10,7 @@ Voor het definiëren van een CPA geldt het volgende advies:
 
 1. Raadpleeg het hoofdstuk 3 'CPA Gebruik en Kenmerken'.
 
-1. Maak gebruik van het online CPA Register<sup>1</sup>, zie document 'Digikoppeling CPA Creatie Handleiding'.
+1. Maak gebruik van het online CPA Register<sup>1</sup>, zie het [CPA Register gebruikershandleiding](https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie/cpa-register-gebruikershandleiding)
 
 > <sup>1</sup>. Het online CPA Register wordt gehost door Justid en is beschikbaar op [https://cparegister.minvenj.nl/logius](https://cparegister.minvenj.nl/logius)
 
