@@ -12,7 +12,7 @@ Voor het definiëren van een CPA geldt het volgende advies:
 
 1. Maak gebruik van het online CPA Register<sup>1</sup>, zie het [CPA Register gebruikershandleiding](https://www.logius.nl/domeinen/gegevensuitwisseling/digikoppeling/documentatie/cpa-register-gebruikershandleiding)
 
-<sup>1</sup>: Het online CPA Register wordt gehost door Justid en is beschikbaar op [https://cparegister.minvenj.nl/logius](https://cparegister.minvenj.nl/logius)
+> <sup>1</sup>. Het online CPA Register wordt gehost door Justid en is beschikbaar op [https://cparegister.minvenj.nl/logius](https://cparegister.minvenj.nl/logius)
 
 ## EB003 Productie- en ontwikkelomgevingen
 
@@ -32,7 +32,7 @@ Voorzie de PartyId van een postfix voor het onderscheid tussen test- en producti
 
 Samenstellingen zijn ook mogelijk, bijvoorbeeld de postfix ‘_OTA’ als er één specifiek adres gebruikt wordt voor de ontwikkel-, test-, en acceptatieomgeving. Aangezien Digikoppeling een strikte scheiding tussen test en productie nastreeft zou een combinatie van productie met andere omgevingen nooit moeten voorkomen<sup>2</sup>.
 
-<sup>2</sup>: De scheiding komt ook. tot uitdrukking in het gebruik van een andere certificaat-root voor productie en andere omgevingen. Zie hiervoor het document “Gebruik en achtergrond Digikoppeling-certificaten”.
+> <sup>2</sup>. De scheiding komt ook. tot uitdrukking in het gebruik van een andere certificaat-root voor productie en andere omgevingen. Zie hiervoor het document “Gebruik en achtergrond Digikoppeling-certificaten”.
 
 ## EB005 Certificaten
 
@@ -116,6 +116,8 @@ Laat de start- en einddatum van de CPA mede afhangen van de geldigheid van de ge
 
 Een CPA voor testdoeleinden kan een korte geldigheidsperiode krijgen, afgestemd op de test periode.
 
+Een geldigheidsperiode langer dan 10 jaar is niet gebruikelijk.
+
 ## EB011 MessageOrder en ConversationId
 
 Als de MessageOrder functionaliteit gebruikt wordt, moeten alle betreffende (samenhangende) berichten dezelfde ConversationId krijgen.
@@ -128,7 +130,7 @@ Als MessageOrder gebruikt wordt is dit van invloed op de overdrachtskarakteristi
 
 ## EB013 MessageId
 
-De Koppelvlakstandaard ebMS2 schrijft het gebruik van een MessageId voor conform RFC2822, in de vorm van “[UUID@URI](mailto:UUID@URI)”.
+De Koppelvlakstandaard ebMS2 schrijft het gebruik van een MessageId voor conform [[RFC2822]], in de vorm van “[UUID@URI](mailto:UUID@URI)”.
 
 De URI in de MessageId kan ook het domein kan zijn van Digikoppeling messagehandler.
 
@@ -142,7 +144,7 @@ Het is toegestaan om op transport niveau het cliënt certificaat te gebruiken vo
 
 Het Digikoppeling ebMS2 Reliable Messaging (RM) profiel vereist dat berichten bevestigd worden met een *acknowledgement* bericht. Binnen het Digikoppeling ebMS2 RM-profiel moet deze acknowledgement *asynchroon* worden verzonden. Een Digikoppeling oplossing houdt hiervoor een administratie bij zodat de acknowledgement aan het initiële *MessageId* van het bericht kan worden kan worden gerefereerd
 
-Bij het gebruik van het uitwisselen van zeer hoge volumes van berichten in beperkte tijd via het Digikoppeling ebMS RM-profiel *kan* de overhead van het asynchroon bevestigen van het bericht via asynchrone acknowledgement (te) groot worden. Vandaar dat sinds versie 3.3 van dit profiel het gebruik van SyncReply Profile in de Digikoppeling ebMS2 Specificatie wordt toegestaan voor een aantal uitzonderingsgevallen. Vanaf deze versie is het in bepaalde gevallen mogelijk om een bericht synchroon – dus in dezelfde http-sessie- te bevestigen met een acknowledgement (of een foutsituatie synchroon te beantwoorden met een *errormessage*)
+Bij het gebruik van het uitwisselen van zeer hoge volumes van berichten in beperkte tijd via het Digikoppeling ebMS RM-profiel *kan* de overhead van het asynchroon bevestigen van het bericht via asynchrone acknowledgement (te) groot worden. Vandaar dat sinds versie 3.3 van dit profiel het gebruik van SyncReply Profile in de Digikoppeling ebMS2 specificatie wordt toegestaan voor een aantal uitzonderingsgevallen. Vanaf deze versie is het in bepaalde gevallen mogelijk om een bericht synchroon – dus in dezelfde http-sessie- te bevestigen met een acknowledgement (of een foutsituatie synchroon te beantwoorden met een *errormessage*)
 
 **Toepassen van Synchrone acknowledgement is uitzondering**
 
@@ -150,19 +152,22 @@ Het gebruik van Syncreply wordt in de regel afgeraden. Tot aan versie 3.3 van Di
 
 In de praktijk blijkt dat er toch situaties bestaan waarin het synchroon bevestigen van een bericht voordeel biedt:
 
-Casusbeschrijving
+<aside class="example">
+**Casusbeschrijving**
 
 Bij uitwisseling tussen een GDI-voorziening en een grote afnemer worden door de verzendende partij aan de ontvangende partij in korte tijd zeer hoge volumes berichten aangeboden. Vanwege de eis op betrouwbaarheid is voor de uitwisseling gekozen voor het ebMS2 RM-profiel. Deze ebMS berichten bevatten per zending 1 functioneel bericht. Hierdoor is de overhead van het ebMS protocol voor de ontvangende partij relatief hoog.
 
 De berichtuitwisseling in de keten was oorspronkelijk opgezet volgens asynchrone bevestiging. Bij de ketenintegratietest tussen beide partijen kwamen verwerkingsproblemen aan de ontvangende kant aan het licht. In onderling overleg tussen de ketenpartners is afgesproken om de ebMS2 uitwisseling zo in te stellen dat acknowledgements synchroon verstuurd worden. Hierna verliep de uitwisseling volgens de afgesproken eisen aan capaciteit, performance en betrouwbaarheid.
+</aside>
 
 ### Voorwaarden voor toepassen van het synchrone bevestiging
 
-- Scope: Dit profiel is alleen geldig voor de Digikoppeling ebMS2 RM-profielen
-
-- Aanleiding: Door omvang van het volume van uitwisseling van berichten in beperkte tijd bestaan verwerkingsproblemen bij (een van beide) providers. Asynchrone uitwisseling van berichten binnen het ebMS profiel blijft de defaultmodus. Dus als de verwerking probleemloos verloopt is er geen reden om over te gaan op synchrone uitwisseling.
-
-- Voorwaarde: De Digikoppeling oplossing van beide partijen ondersteunen het instellen van SyncReplymode op mshSignalsOnly. Het instellen van deze mode kan dus niet eenzijdig worden opgelegd.
+- Scope:
+  - Dit profiel is alleen geldig voor de Digikoppeling ebMS2 RM-profielen
+- Aanleiding:
+  - Door omvang van het volume van uitwisseling van berichten in beperkte tijd bestaan verwerkingsproblemen bij (een van beide) providers. Asynchrone uitwisseling van berichten binnen het ebMS profiel blijft de defaultmodus. Dus als de verwerking probleemloos verloopt is er geen reden om over te gaan op synchrone uitwisseling.
+- Voorwaarde:
+  - De Digikoppeling oplossing van beide partijen ondersteunen het instellen van SyncReplymode op mshSignalsOnly. Het instellen van deze mode kan dus niet eenzijdig worden opgelegd.
 
 <aside class="note">
     Indien de berichtuitwisseling via een intermediary verloopt dient deze ook de SyncReplymode te ondersteunen om de synchrone communicatie tussen partijen mogelijk te maken.
@@ -170,12 +175,11 @@ De berichtuitwisseling in de keten was oorspronkelijk opgezet volgens asynchrone
 
 ## EB016 Correlatie van berichten
 
-Voor het correleren van berichten in ebMS2 spelen de elementen *Messageid*, *ConversationId* en *RefToMessageId* een rol. Het gebruik van de combinatie *MessageId* en *RefToMessageId* en het *ConversationId* dienen verschillende doelen.
+Voor het correleren van berichten in ebMS2 spelen de elementen *Messageid*, *ConversationId* en *RefToMessageId* een rol. Het gebruik van de combinatie *MessageId* en *RefToMessageId* en het *ConversationId* dienen verschillende doelen. Deze 2 doelen zijn hieronder uitgewerkt:
 
 ### Response op een specifiek request
 
 *Messageid* en *RefToMessageId* worden gebruikt om heel specifiek aan te geven op welke request een response wordt gegeven. *RefToMessageId* wordt dus gebruikt om de relatie tussen een ebMS bericht en het daarop volgende ACK of NACK bericht aan te geven, een protocol gerelateerde relatie.
-
 
 <aside class="example">
 Voor een terugmelding  op de GBA met MessageId 1234 moet de GBA in het antwoord op deze terugmelding het RefToMessageId 1234 gebruiken. Zo zijn request en response onlosmakelijk met elkaar verbonden. Normaal gesproken worden geen verdere antwoorden op een dergelijke melding terugverwacht waardoor het bericht met het RefToMessageId ook vaak de transactie beëindigt.

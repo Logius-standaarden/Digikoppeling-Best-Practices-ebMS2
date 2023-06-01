@@ -4,19 +4,18 @@ Een onderdeel van de ebMS 2.0 specificatie is de volgordelijkheid van berichten,
 
 ## MessageOrder Module**
 
-The MessageOrder module allows messages to be presented to the To Party in a particular order. This is accomplished through the use of the MessageOrder element. Reliable Messaging MUST be used when a MessageOrder element is present.
-
-MessageOrder module MUST only be used in conjunction with the ebXML Reliable Messaging Module (section 6) with a scheme of Once-And-Only-Once (sections 6.6). If a sequence is sent and one message fails to arrive at the To Party MSH, all subsequent messages will also fail to be presented to the To Party Application (see status attribute section 9.1.1).
+> The MessageOrder module allows messages to be presented to the To Party in a particular order. This is accomplished through the use of the MessageOrder element. Reliable Messaging MUST be used when a MessageOrder element is present.
+> MessageOrder module MUST only be used in conjunction with the ebXML Reliable Messaging Module (section 6) with a scheme of Once-And-Only-Once (sections 6.6). If a sequence is sent and one message fails to arrive at the To Party MSH, all subsequent messages will also fail to be presented to the To Party Application (see status attribute section 9.1.1).
 
 ## MessageOrder Element**
 
-The MessageOrder element is an OPTIONAL extension to the SOAP Header requesting the preservation of message order in this conversation.
+> The MessageOrder element is an OPTIONAL extension to the SOAP Header requesting the preservation of message order in this conversation.
 
 De ebMS standaard biedt daarmee de mogelijkheid om de volgordelijkheid van berichten te garanderen.
 
-Maar het is wel een OPTIONAL<sup>7</sup> element, dus bekijk per product of het ook daadwerkelijk ondersteund wordt.
+Maar het is wel een OPTIONAL<sup>6</sup> element, dus bekijk per product of het ook daadwerkelijk ondersteund wordt.
 
-<sup>7</sup>: OPTIONAL, uit [[EBXML-MSG]]: “This word means that an item is truly optional. One vendor may choose to include the item because a particular marketplace requires it or because the vendor feels that it enhances the product while another vendor may omit the same item.”
+> <sup>6</sup>. OPTIONAL, uit [[EBXML-MSG]]: “This word means that an item is truly optional. One vendor may choose to include the item because a particular marketplace requires it or because the vendor feels that it enhances the product while another vendor may omit the same item.”
 
 ## Productondersteuning
 
@@ -52,7 +51,7 @@ Als het niet mogelijk is om de MessageOrder functionaliteit te gebruiken, kan ze
 
 Als uitgangspunt voor de realisatie van de volgordelijkheid kan het Resequencer patroon gebruikt worden: [http://www.enterpriseintegrationpatterns.com/Resequencer.html](http://www.enterpriseintegrationpatterns.com/Resequencer.html)
 
----
+<aside class="example">
 
 A [Message Router](http://www.enterpriseintegrationpatterns.com/MessageRouter.html) can route messages from one channel to different channels based on message content or other criteria. Because individual messages may follow different routes, some messages are likely to pass through the processing steps sooner than others, resulting in the messages getting out of order. However, some subsequent processing steps do require in-sequence processing of messages, for example to maintain referential integrity.
 
@@ -64,7 +63,7 @@ A [Message Router](http://www.enterpriseintegrationpatterns.com/MessageRouter.ht
 
 The Resequencer can receive a stream of messages that may not arrive in order. The Resequencer contains in internal buffer to store out-of-sequence messages until a complete sequence is obtained. The in-sequence messages are then published to the output channel. It is important that the output channel is order-preserving so messages are guaranteed to arrive in order at the next component. Like most other routers, a Resequencer usually does not modify the message contents.  
 
----
+</aside>
 
 De oplossingsrichtingen voor berichten waarvoor een volgnummer van belang is wordt hieronder globaal beschreven. Er wordt uitgegaan van een 'push' mechanisme: de ontvangende applicatie wordt dus actief doordat de ebMS adapter een functie van de applicatie aanroept voor het afleveren van een bericht (bijvoorbeeld met behulp van een web service of JMS queue). Dit in tegenstelling tot een 'pull' mechanisme waarbij het initiatief bij de applicatie ligt om te bepalen of er een nieuw bericht is ontvangen.
 
