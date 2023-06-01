@@ -61,7 +61,7 @@ A [Message Router](http://www.enterpriseintegrationpatterns.com/MessageRouter.ht
 
 *Use a stateful filter, a Resequencer, to collect and re-order messages so that they can be published to the output channel in a specified order.*
 
-The Resequencer can receive a stream of messages that may not arrive in order. The Resequencer contains in internal buffer to store out-of-sequence messages until a complete sequence is obtained. The in-sequence messages are then published to the output channel. It is important that the output channel is order-preserving so messages are guaranteed to arrive in order at the next component. Like most other routers, a Resequencer usually does not modify the message contents.  
+The Resequencer can receive a stream of messages that may not arrive in order. The Resequencer contains an internal buffer to store out-of-sequence messages until a complete sequence is obtained. The in-sequence messages are then published to the output channel. It is important that the output channel is order-preserving so messages are guaranteed to arrive in order at the next component. Like most other routers, a Resequencer usually does not modify the message contents.  
 
 </aside>
 
