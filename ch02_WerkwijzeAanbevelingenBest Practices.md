@@ -2,7 +2,7 @@
 
 ## EB001 ebMS2 Producten
 
-Gebruik een ebMS2 product met aantoonbare ervaring binnen het Digikoppeling domein. Op de website van Logius is een overzicht van Digikoppeling leveranciers te vinden en ook in de marktscan van KING en Logius is een overzicht te vinden van het aanbod van Digikoppeling adapters dat voldoet aan de eisen die KING stelt aan een Digikoppeling Adapter voor de gemeentelijke markt.
+Gebruik een ebMS2 product met aantoonbare ervaring binnen het Digikoppeling domein. Op de website van Logius is een overzicht van Digikoppeling leveranciers te vinden. De [GEMMA softwarecatalogus](https://www.softwarecatalogus.nl/pakketten?zoek=digikoppeling+ebms) van de VNG geeft een overzicht van softwareproducten voor de gemeentelijke markt die de Digikoppeling ebMS koppelvlakspecificatie ondersteunen.
 
 ## EB002 CPA Gebruik
 
