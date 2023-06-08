@@ -86,7 +86,7 @@ Digikoppeling biedt de mogelijkheid om op deze gestandaardiseerde wijze berichte
 De uitwisseling tussen partijen is in drie lagen opgedeeld:
 
 1. Inhoud (gegevens): deze laag bevat afspraken over de inhoud van het uit te wisselen bericht, dus de structuur, semantiek en waardebereiken <BR>
-Digikoppeling houdt zich niet met de inhoud bezig, **'heeft geen boodschap aan de boodschap'**.
+Digikoppeling houdt zich niet met de inhoud bezig, '_heeft geen boodschap aan de boodschap_'.
 
 2. Logistiek (processen): op deze laag bevinden zich de afspraken betreffende transportprotocollen (HTTP/TLS), messaging (SOAP), adressering, beveiliging (authenticatie en encryptie) en betrouwbaarheid. Dit is laag van Digikoppeling.
 
@@ -96,13 +96,13 @@ Digikoppeling houdt zich niet met de inhoud bezig, **'heeft geen boodschap aan d
 
 ## Opbouw van dit document
 
-Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen.
+[Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen.](#inleiding)
 
-Hoofdstuk 2 bevat de aanbevelingen, werkwijze en best practices.
+[Hoofdstuk 2 bevat de aanbevelingen, werkwijze en best practices.](#werkwijze-aanbevelingen-best-practices)
 
-Hoofdstuk 3 gaat in op de kenmerken van een CPA.
+[Hoofdstuk 3 gaat in op de kenmerken van een CPA.](#cpa-gebruik-en-kenmerken)
 
-Hoofdstuk 4 gaat over bericht volgordelijkheid.
+[Hoofdstuk 4 gaat over bericht volgordelijkheid.](#het-gebruik-van-berichtvolgordelijkheid)
 
 > Begrippen en afkortingen worden toegelicht in het document [[Digikoppeling-Architectuur]].  
 > Dit document is onderdeel van de Digikoppeling standaard.

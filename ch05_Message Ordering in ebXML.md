@@ -1,13 +1,13 @@
-# Message Ordering in ebXML
+## Message Ordering in ebXML
 
 Een onderdeel van de ebMS 2.0 specificatie is de volgordelijkheid van berichten, aangeduid met MessageOrder. overgenomen uit hoofdstuk 9 van [[EBXML-MSG]]
 
-## MessageOrder Module**
+### MessageOrder Module**
 
 > The MessageOrder module allows messages to be presented to the To Party in a particular order. This is accomplished through the use of the MessageOrder element. Reliable Messaging MUST be used when a MessageOrder element is present.
 > MessageOrder module MUST only be used in conjunction with the ebXML Reliable Messaging Module (section 6) with a scheme of Once-And-Only-Once (sections 6.6). If a sequence is sent and one message fails to arrive at the To Party MSH, all subsequent messages will also fail to be presented to the To Party Application (see status attribute section 9.1.1).
 
-## MessageOrder Element**
+### MessageOrder Element**
 
 > The MessageOrder element is an OPTIONAL extension to the SOAP Header requesting the preservation of message order in this conversation.
 
@@ -17,7 +17,7 @@ Maar het is wel een OPTIONAL<sup>6</sup> element, dus bekijk per product of het 
 
 > <sup>6</sup>. OPTIONAL, uit [[EBXML-MSG]]: “This word means that an item is truly optional. One vendor may choose to include the item because a particular marketplace requires it or because the vendor feels that it enhances the product while another vendor may omit the same item.”
 
-## Productondersteuning
+### Productondersteuning
 
 De ondersteuning voor de MessageOrder verschilt per product. Hermes 2.0 en OrionMsg ondersteunen het wel, AxWay ondersteunt het niet, en de recente IBM release 'WebSphere Partner Gateway V6.1' ondersteunt het wel.
 
@@ -27,7 +27,7 @@ Uit het test rapport van de Drummond Group, blz 18, hoofdstuk “Differing inter
 
 > (..) The ebMS v2.0 specification requires that ConversationId be present in all messages, and requires that if you implement the optional MessageOrdering feature (not tested by DGI) that ConversationId must stay the same over all ordered messages. (..)
 
-## Zelfbouwoverwegingen
+### Zelfbouwoverwegingen
 
 Als het niet mogelijk is om de MessageOrder functionaliteit te gebruiken, kan zelfbouw overwogen worden. Het is wel raadzaam om een aantal aspecten in overweging te nemen voordat de implementatie van de volgordelijkheid in een applicatie opgepakt wordt.
 
@@ -47,7 +47,7 @@ Als het niet mogelijk is om de MessageOrder functionaliteit te gebruiken, kan ze
 
 - Het inregelen van dit proces is lastig en het is dan de vraag of een andere oplossing (zoals met bevestigingsberichten) een goed alternatief is.
 
-## Ontwerp Pattern
+### Ontwerp Pattern
 
 Als uitgangspunt voor de realisatie van de volgordelijkheid kan het Resequencer patroon gebruikt worden: [http://www.enterpriseintegrationpatterns.com/Resequencer.html](http://www.enterpriseintegrationpatterns.com/Resequencer.html)
 
@@ -67,7 +67,7 @@ The Resequencer can receive a stream of messages that may not arrive in order. T
 
 De oplossingsrichtingen voor berichten waarvoor een volgnummer van belang is wordt hieronder globaal beschreven. Er wordt uitgegaan van een 'push' mechanisme: de ontvangende applicatie wordt dus actief doordat de ebMS adapter een functie van de applicatie aanroept voor het afleveren van een bericht (bijvoorbeeld met behulp van een web service of JMS queue). Dit in tegenstelling tot een 'pull' mechanisme waarbij het initiatief bij de applicatie ligt om te bepalen of er een nieuw bericht is ontvangen.
 
-### Specificatie (Design Time)
+#### Specificatie (Design Time)
 
 - Voeg aan de specificatie van het bericht een element 'Volgnummer' toe.
 
@@ -79,7 +79,7 @@ De oplossingsrichtingen voor berichten waarvoor een volgnummer van belang is wor
 
 - Er is een 'berichtenpool' beschikbaar waar berichten met een volgnummer in bewaard worden. Hierbij is het volgnummer een sleutel om berichten uit de ‘berichtenpool' te halen.
 
-### Verwerking (Run Time)
+#### Verwerking (Run Time)
 
 - Bij ontvangst van een 'Aanvang'-bericht wordt de toestand geïnitieerd voor de volgordelijke verwerking van de berichten.
 
