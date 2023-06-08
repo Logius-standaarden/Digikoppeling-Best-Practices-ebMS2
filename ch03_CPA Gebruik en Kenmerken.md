@@ -49,19 +49,19 @@ De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onder
 
 ### Service
 
-    Een Service is een unieke aanduiding voor een set van samenhangende operaties.
+Een Service is een unieke aanduiding voor een set van samenhangende operaties.
 
-    De service moet uniek zijn. Advies voor de naamgeving is als volgt:
+De service moet uniek zijn. Advies voor de naamgeving is als volgt:
 
-    `[organisatie]:[service]:[versie]`
+`[organisatie]:[service]:[versie]`
 
-    De service heeft als type “urn:osb:services” (zonder quotes).
+De service heeft als type “urn:osb:services” (zonder quotes).
 
-    Een service wordt als volgt in het ebMS2 contract opgenomen (met een voorbeeld service “OSB:Service:1:0”):  
+Een service wordt als volgt in het ebMS2 contract opgenomen (met een voorbeeld service “OSB:Service:1:0”):  
 
-    ```XML
-    <tns:Service tns:type="urn:osb:services">OSB:Service:1:0</tns:Service>
-    ```
+```XML
+<tns:Service tns:type="urn:osb:services">OSB:Service:1:0</tns:Service>
+```
 
 ### CPAId
 
@@ -106,9 +106,9 @@ Het Organisatie Identificatie nummer (OIN) van de organisatie. De PartyId is de 
 
 ### PartyId Type
 
-Deze heeft de waarde urn:osb:oin voor PartyId's met een OIN.(Dit is ook de default waarde voor de CPA's zoals die door het CPA register wordt gehanteerd.)
+Deze heeft de waarde `urn:osb:oin` voor PartyId's met een OIN.(Dit is ook de default waarde voor de CPA's zoals die door het CPA register wordt gehanteerd.)
 
-De PartyId type wordt als volgt opgenomen in het ebMS2 contract (met een voorbeeld van de PartyId waarde “0123456789”):  
+De PartyId type wordt als volgt opgenomen in het ebMS2 contract (met een voorbeeld van de PartyId waarde `0123456789`):  
 
 ```XML
 <tns:PartyId tns:type="urn:osb:oin">123456789</tns:PartyId>
@@ -236,7 +236,7 @@ Op basis van de hierboven genoemde CPA onderdelen kan alleen een 'CPA template' 
 
 In het document 'Digikoppeling CPA Creatiehandleiding' is te lezen met welke gegevens een CPA gemaakt wordt, in combinatie met Digikoppeling CPA Creatievoorziening.
 
-| **Meer informatie**     | **Zie document in de aansluitkit**               | **Doelgroep** |
+| Meer informatie     | Zie document in de aansluitkit               | Doelgroep |
 |-------------------------|--------------------------------------------------|---------------|
 | Handleiding CPA register | [https://www.logius.nl/diensten/digikoppeling/aanvragen/voorbereiden](https://www.logius.nl/diensten/digikoppeling/aanvragen/voorbereiden) | [A&D] [OT&B]  |
 
