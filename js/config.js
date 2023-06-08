@@ -5,8 +5,7 @@ var respecConfig = {
       } ],
   authors: [ { 
         "mailto" : "digikoppeling@logius.nl",
-        "name" : "Logius",
-        "url" : "https://logius.nl/standaarden"
+        "name" : "Logius"
       } ],
   editors: [ 
       { 
@@ -18,16 +17,21 @@ var respecConfig = {
         "company" : "Logius",
         "name" : "Pieter Hering",
         "url" : "https://logius.nl/standaarden"
+      },
+      { 
+        "company" : "Logius",
+        "name" : "Martin van der Plas",
+        "url" : "https://logius.nl/standaarden"
       }
     ],
   github: "https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-ebMS2",
   previousMaturity: "DEF",
-  previousPublishDate: "2019-05-16",
-  previousPublishVersion: "3.2",
+  previousPublishDate: "2022-04-11",
+  previousPublishVersion: "3.2.1",
   pubDomain: "dk",
-  publishDate: "2022-04-11",
-  publishVersion: "3.2.1",
+  publishDate: "2023-05-31",
+  publishVersion: "3.2.2",
   shortName: "bpebms",
-  specStatus: "DEF",
+  specStatus: "WV",
   specType: "BP"
 };
