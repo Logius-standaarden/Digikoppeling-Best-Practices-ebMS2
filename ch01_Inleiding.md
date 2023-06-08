@@ -107,5 +107,5 @@ Digikoppeling houdt zich niet met de inhoud bezig, '_heeft geen boodschap aan de
 > Begrippen en afkortingen worden toegelicht in het document [[Digikoppeling-Architectuur]].  
 > Dit document is onderdeel van de Digikoppeling standaard.
 
-<div class="note">Dit document en alle andere Digikoppeling documentatie is beschikbaar op <a href="http://www.logius.nl/digikoppeling">Logius.nl/digikoppeling</a>.
+<div class="note">Dit document en alle andere Digikoppeling documentatie is beschikbaar op [de website van Logius](http://www.logius.nl/digikoppeling).
 </div>
