@@ -1,4 +1,5 @@
 # Inleiding
+
 ## Doel en doelgroep
 
 Alle Digikoppeling profielen die op ebMS2 gebaseerd zijn, moeten zich conformeren aan de Koppelvlakstandaard ebMS2. Dit document is een aanvulling hierop. Het heeft als doel ontwikkelaars te adviseren en te informeren over de huidige werkwijze bij het toepassen van Digikoppeling Koppelvlakstandaard ebMS2 – deze informatie geldt dus alleen voor de ebMS2-variant.
@@ -16,9 +17,7 @@ Het document is bestemd voor Architecten, integratie specialisten en ontwikkelaa
 
 Digikoppeling is beschreven in een set van documenten. Deze set is als volgt opgebouwd:
 
-
 ![Overzicht van de onderdelen van de Digikoppeling Standaard, de standaard is onderverdeeld in normatieve en ondersteunende onderdelen](media/DK_Specificatie_structuur.svg "Opbouw documentatie Digikoppeling")
-
 
 <details>
     <summary> Tekstalternatief </summary>
@@ -86,26 +85,27 @@ Digikoppeling biedt de mogelijkheid om op deze gestandaardiseerde wijze berichte
 
 De uitwisseling tussen partijen is in drie lagen opgedeeld:
 
-- Inhoud (gegevens): deze laag bevat afspraken over de inhoud van het uit te wisselen bericht, dus de structuur, semantiek en waardebereiken   
-    Digikoppeling houdt zich niet met de inhoud bezig, ' heeft geen boodschap aan de boodschap'.
+1. Inhoud (gegevens): deze laag bevat afspraken over de inhoud van het uit te wisselen bericht, dus de structuur, semantiek en waardebereiken <BR>
+Digikoppeling houdt zich niet met de inhoud bezig, '_heeft geen boodschap aan de boodschap_'.
 
-- Logistiek (processen): op deze laag bevinden zich de afspraken betreffende transportprotocollen (HTTP/TLS), messaging (SOAP), adressering, beveiliging (authenticatie en encryptie) en betrouwbaarheid. Dit is laag van Digikoppeling.
+2. Logistiek (processen): op deze laag bevinden zich de afspraken betreffende transportprotocollen (HTTP/TLS), messaging (SOAP), adressering, beveiliging (authenticatie en encryptie) en betrouwbaarheid. Dit is laag van Digikoppeling.
 
-- Transport (techniek): deze laag verzorgt het daadwerkelijke transport van het bericht (TCP/IP).
+3. Transport (techniek): deze laag verzorgt het daadwerkelijke transport van het bericht (TCP/IP).
 
-Digikoppeling richt zich uitsluitend op de logistieke laag.
+> Digikoppeling richt zich uitsluitend op de logistieke laag.
 
 ## Opbouw van dit document
 
-Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen.
+[Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen.](#inleiding)
 
-Hoofdstuk 2 bevat de aanbevelingen, werkwijze en best practices.
+[Hoofdstuk 2 bevat de aanbevelingen, werkwijze en best practices.](#werkwijze-aanbevelingen-best-practices)
 
-Hoofdstuk 3 gaat in op de kenmerken van een CPA.
+[Hoofdstuk 3 gaat in op de kenmerken van een CPA.](#cpa-gebruik-en-kenmerken)
 
-Hoofdstuk 4 gaat over bericht volgordelijkheid.
+[Hoofdstuk 4 gaat over bericht volgordelijkheid.](#het-gebruik-van-berichtvolgordelijkheid)
 
-Begrippen en afkortingen worden toegelicht in het document “DigikoppelingArchitectuur”. Deze zit in de Digikoppeling standaard.
+> Begrippen en afkortingen worden toegelicht in het document [[Digikoppeling-Architectuur]].  
+> Dit document is onderdeel van de Digikoppeling standaard.
 
-Dit document en andere documentatie is beschikbaar op [www.logius.nl/digikoppeling](http://www.logius.nl/digikoppeling).
-
+<div class="note">Dit document en alle andere Digikoppeling documentatie is beschikbaar op [de website van Logius](http://www.logius.nl/digikoppeling).
+</div>

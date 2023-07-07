@@ -10,9 +10,8 @@ Een CPA is een formeel xml document om de gebruikte functionele en technische ei
 
 De CPA is gestandaardiseerd in [ISO 15000-1: ebXML Collaborative Partner Profile Agreement (afgekort tot ebCPP<sup>3</sup>). Het ebMS2 protocol is gestandaardiseerd in ebXML Messaging Service Specification (afgekort tot ebMS2<sup>4</sup>).
 
-<sup>3</sup>: [[ebCPP]] Collaboration-Protocol Profile and Agreement Specification Version 2.0, September 23, 2002. Url: http://www.oasis-open.org/committees/ebxml-cppa/documents/ebcpp-2.0c.pdf
-
-<sup>4</sup>: Message Service Specification, Version 2.0, 1 April 2002. Url: http://www.oasis-open.org/committees/ebxml-msg/documents/ebMS_v2_0.pdf [[EBXML-MSG]]
+> <sup>3</sup>. [[ebCPP]] Collaboration-Protocol Profile and Agreement Specification Version 2.0, September 23, 2002. Url: http://www.oasis-open.org/committees/ebxml-cppa/documents/ebcpp-2.0c.pdf
+> <sup>4</sup>. Message Service Specification, Version 2.0, 1 April 2002. Url: http://www.oasis-open.org/committees/ebxml-msg/documents/ebMS_v2_0.pdf [[EBXML-MSG]]
 
 De eigenschappen van de gegevensoverdracht geven onder andere aan:
 
@@ -48,31 +47,31 @@ De kenmerken van het ebMS2 verkeer op Digikoppeling zijn beschreven in het docum
 
 De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onderdelen worden hieronder beschreven in termen zoals benoemd in [[ebCPP]].
 
-- Service
+### Service
 
-    Een Service is een unieke aanduiding voor een set van samenhangende operaties.
+Een Service is een unieke aanduiding voor een set van samenhangende operaties.
 
-    De service moet uniek zijn. Advies voor de naamgeving is als volgt:
+De service moet uniek zijn. Advies voor de naamgeving is als volgt:
 
-    `[organisatie]:[service]:[versie]`
+`[organisatie]:[service]:[versie]`
 
-    De service heeft als type “urn:osb:services” (zonder quotes).
+De service heeft als type “urn:osb:services” (zonder quotes).
 
-    Een service wordt als volgt in het ebMS2 contract opgenomen (met een voorbeeld service “OSB:Service:1:0”):  
+Een service wordt als volgt in het ebMS2 contract opgenomen (met een voorbeeld service “OSB:Service:1:0”):  
 
-    ```XML
-    <tns:Service tns:type="urn:osb:services">OSB:Service:1:0</tns:Service>
-    ```
+```XML
+<tns:Service tns:type="urn:osb:services">OSB:Service:1:0</tns:Service>
+```
 
-- CPAId
+### CPAId
 
-    Een CPAId is een unieke aanduiding voor een overeenkomst voor een bepaalde service. De CPAId moet uniek zijn voor die bepaalde service. Denk hierbij aan het feit dat er één service wordt gespecificeerd door een service provider en dat meerdere service requesters een samenwerking aangaan. Elke samenwerking tussen twee partijen moet een ander CPAId krijgen. Een CPAId moet uniek zijn. Advies voor de naamgeving is als volgt:
+Een CPAId is een unieke aanduiding voor een overeenkomst voor een bepaalde service. De CPAId moet uniek zijn voor die bepaalde service. Denk hierbij aan het feit dat er één service wordt gespecificeerd door een service provider en dat meerdere service requesters een samenwerking aangaan. Elke samenwerking tussen twee partijen moet een ander CPAId krijgen. Een CPAId moet uniek zijn. Advies voor de naamgeving is als volgt:
 
-    `[ServiceID]_[PartyId-A]_[PartyId-B]_[versie]`
+`[ServiceID]_[PartyId-A]_[PartyId-B]_[versie]`
 
-    NB. Gebruik geen punten of andere vreemde tekens, want sommige ebMS-adapters zouden de CPAId wel eens als filenaam kunnen gebruiken...
+NB. Gebruik geen punten of andere vreemde tekens, want sommige ebMS-adapters zouden de CPAId wel eens als filenaam kunnen gebruiken...
 
-    Hierbij zijn:
+Hierbij zijn:
 
   - `[ServiceID]` de unieke Service ID
 
@@ -82,43 +81,44 @@ De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onder
 
   - `[versie]` een UUID (of een versie nummer mits de uitgever van de CPA kan garanderen dat de CPAId uniek blijft)
 
-- Start- en einddatum
+### Start- en einddatum
 
-    Elke CPA heeft een start en einddatum. Dit moet afgestemd worden tussen de twee partijen die een samenwerking aangaan. Merk op dat er een afhankelijkheid is met de geldigheidsperiode van de gebruikte client- en servercertificaten.
+Elke CPA heeft een start en einddatum. Dit moet afgestemd worden tussen de twee partijen die een samenwerking aangaan. Merk op dat er een afhankelijkheid is met de geldigheidsperiode van de gebruikte client- en servercertificaten.
 
-- Default Message Channel  
-    Een CPA bevat twee PartyInfo elementen: voor elke deelnemer in de samenwerking één. Elk PartyInfo element kent precies één 'default channel' dat gebruikt wordt voor de verzending van onderliggende protocol berichten (zoals de acknowledgments). In de CPA wordt deze 'default channel' aangegeven met het defaultMshChannelId attribuut. De eigenschappen van dit channel worden bepaald op basis van het Digikoppeling ebMS2 profiel met de hoogste beveiliging. Als een CPA verschillende Actions bevat waarvoor de acknowledgements verschillende profiel eigenschappen hebben, zullen de Actions verdeeld moeten worden over meerdere CPA's: in elke CPA komen die Actions die dezelfde profiel eigenschappen hebben. Als er gebruik gemaakt wordt van de CPA Creatievoorziening zullen er verschillende Digikoppeling-ebMS2 Servicespecificaties gemaakt moeten worden.
+### Default Message Channel
 
-   <aside class="example">
-    Er zijn twee Actions:  
-    Action1 : profiel osb-rm-e  
-    Action2 : profiel osb-be  
-    De default channel zal de eigenschappen overnemen van het profiel osb-rm-e. Als dit NIET wenselijk is, zullen de twee actions in twee verschillende CPA's geplaatst moeten worden.
-    </aside>
+Een CPA bevat twee PartyInfo elementen: voor elke deelnemer in de samenwerking één. Elk PartyInfo element kent precies één 'default channel' dat gebruikt wordt voor de verzending van onderliggende protocol berichten (zoals de acknowledgments). In de CPA wordt deze 'default channel' aangegeven met het defaultMshChannelId attribuut. De eigenschappen van dit channel worden bepaald op basis van het Digikoppeling ebMS2 profiel met de hoogste beveiliging. Als een CPA verschillende Actions bevat waarvoor de acknowledgements verschillende profiel eigenschappen hebben, zullen de Actions verdeeld moeten worden over meerdere CPA's: in elke CPA komen die Actions die dezelfde profiel eigenschappen hebben. Als er gebruik gemaakt wordt van de CPA Creatievoorziening zullen er verschillende Digikoppeling-ebMS2 Servicespecificaties gemaakt moeten worden.
 
-- PartyName
+<aside class="example">
+Er zijn twee Actions:  
+Action1 : profiel osb-rm-e  
+Action2 : profiel osb-be  
+De default channel zal de eigenschappen overnemen van het profiel osb-rm-e. Als dit NIET wenselijk is, zullen de twee actions in twee verschillende CPA's geplaatst moeten worden.
+</aside>
 
-    De naam van de partij zoals die opgegeven moet worden in de CPA. Dit zal voor elke organisatie anders zijn, maar blijft wel hetzelfde voor alle CPA’s die gemaakt zullen worden.
+### PartyName
 
-- PartyId
+De naam van de partij zoals die opgegeven moet worden in de CPA. Dit zal voor elke organisatie anders zijn, maar blijft wel hetzelfde voor alle CPA’s die gemaakt zullen worden.
 
-    Het Organisatie Identificatie nummer (OIN) van de organisatie. De PartyId is de (logische) aanduiding waarmee de organisatie geïdentificeerd wordt. Als de organisatie nog geen OIN heeft moet een nummer aangevraagd worden bij Logius. De COR (De Centrale OIN Raadpleegvoorziening) wordt gebruikt om informatie vast te leggen over de organisatie en het OIN. Het nummer zal ook gebruikt worden in het cliënt certificaat voor het subject.Serialnumber veld. Zie ook EB014 in hoofdstuk 2. Organisaties die op basis van standaarden met andere overheden communiceren wordt sterk aangeraden om een OIN aan te vragen.
+### PartyId
 
-- PartyId Type
+Het Organisatie Identificatie nummer (OIN) van de organisatie. De PartyId is de (logische) aanduiding waarmee de organisatie geïdentificeerd wordt. Als de organisatie nog geen OIN heeft moet een nummer aangevraagd worden bij Logius. De COR (De Centrale OIN Raadpleegvoorziening) wordt gebruikt om informatie vast te leggen over de organisatie en het OIN. Het nummer zal ook gebruikt worden in het cliënt certificaat voor het subject.Serialnumber veld. Zie ook EB014 in hoofdstuk 2. Organisaties die op basis van standaarden met andere overheden communiceren wordt sterk aangeraden om een OIN aan te vragen.
 
-    Deze heeft de waarde urn:osb:oin voor PartyId's met een OIN.(Dit is ook de default waarde voor de CPA's zoals die door het CPA register wordt gehanteerd.)
+### PartyId Type
 
-    De PartyId type wordt als volgt opgenomen in het ebMS2 contract (met een voorbeeld van de PartyId waarde “0123456789”):  
+Deze heeft de waarde `urn:osb:oin` voor PartyId's met een OIN.(Dit is ook de default waarde voor de CPA's zoals die door het CPA register wordt gehanteerd.)
 
-    ```XML
-    <tns:PartyId tns:type="urn:osb:oin">123456789</tns:PartyId>
-    ```
+De PartyId type wordt als volgt opgenomen in het ebMS2 contract (met een voorbeeld van de PartyId waarde `0123456789`):  
 
-    Het is toegestaan om een andere PartyId type te hanteren als de organisatie reeds andersoortige (geen OIN's) PartyId’s heeft voor de organisatie identificatie. Het moge duidelijk zijn dat het in overleg met de samenwerkende organisaties vastgesteld moet worden. Zie ook EB014 in hoofdstuk 2.
+```XML
+<tns:PartyId tns:type="urn:osb:oin">123456789</tns:PartyId>
+```
 
-- BusinessCharacteristics
+Het is toegestaan om een andere PartyId type te hanteren als de organisatie reeds andersoortige (geen OIN's) PartyId’s heeft voor de organisatie identificatie. Het moge duidelijk zijn dat het in overleg met de samenwerkende organisaties vastgesteld moet worden. Zie ook EB014 in hoofdstuk 2.
 
-    Deze heeft de volgende verplichte waarde, waarbij alleen de timeToPerform een andere waarde kan krijgen (afhankelijk van de timing karakteristieken van de RequestingBusinessActivity en de RespondingBusinessActivity):
+### BusinessCharacteristics
+
+Deze heeft de volgende verplichte waarde, waarbij alleen de timeToPerform een andere waarde kan krijgen (afhankelijk van de timing karakteristieken van de RequestingBusinessActivity en de RespondingBusinessActivity):
 
 ```XML
 <tns:BusinessTransactionCharacteristics
@@ -132,8 +132,7 @@ De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onder
     tns:timeToPerform="P2D"/>
 ```
 
-
-TransportProtocol over HTTP met TLS met server certificaat.  
+### TransportProtocol over HTTP met TLS met server certificaat
 Deze hebben de verplichte waardes:
 
 ```XML
@@ -150,78 +149,82 @@ en voor bijvoorbeeld versie 1 van TLS
 voor de actuele versies van het te gebruiken protocol bij de uitwisseling zie [[Digikoppeling Beveiligingsdocument]]
 </aside>
 
-- Client Authentication over HTTP met client certificaat. Dit is verplicht. In het client certificaat staat in het subject.Serialnumber de PartyId van de ‘client’ organisatie.
+### Client Authentication over HTTP met client certificaat. 
 
-- Endpoint
+Dit is verplicht. In het client certificaat staat in het subject.Serialnumber de PartyId van de ‘client’ organisatie.
 
-    Deze heeft de waarde van de URL (FQDN, met pad namen) van de ebMS-adapter waarmee over Digikoppeling gegevens uitgewisseld worden. De FQDN van de URL moet overeenkomen met de FQDN die in het server certificaat vermeld staat.
+### Endpoint
 
-- MessageOrder
+Deze heeft de waarde van de URL (FQDN, met pad namen) van de ebMS-adapter waarmee over Digikoppeling gegevens uitgewisseld worden. De FQDN van de URL moet overeenkomen met de FQDN die in het server certificaat vermeld staat.
 
-    De MessageOrder geeft aan of er wel of geen gebruik gemaakt wordt van ordening van berichten. De default waarde voor MessageOrder is “NotGuaranteed” en wordt als volgt opgenomen in het ebMS2 contract:
+### MessageOrder
 
-    ```XML
-        <tns:MessageOrderSemantics>NotGuaranteed</tns:MessageOrderSemantics>
-    ```
+De MessageOrder geeft aan of er wel of geen gebruik gemaakt wordt van ordening van berichten. De default waarde voor MessageOrder is “NotGuaranteed” en wordt als volgt opgenomen in het ebMS2 contract:
 
-    Indien er wel gebruik gemaakt wordt van MessageOrder is de waarde:
+```XML
+    <tns:MessageOrderSemantics>NotGuaranteed</tns:MessageOrderSemantics>
+```
 
-    ```XML
-        <tns:MessageOrderSemantics>Guaranteed</tns:MessageOrderSemantics>
-    ```
+Indien er wel gebruik gemaakt wordt van MessageOrder is de waarde:
+
+```XML
+    <tns:MessageOrderSemantics>Guaranteed</tns:MessageOrderSemantics>
+```
 
 <aside class="note"> MessageOrder wordt niet door alle ebMS-adapters implementaties ondersteund. Als het wel het geval is zal de interoperabiliteit goed getest moeten worden. Zie hoofdstuk “Het gebruik van bericht volgordelijkheid”.
 </aside>
 
-- ReliableMessaging
+### ReliableMessaging
 
-    Deze heeft default een retryCount van 8 en een retryInterval van 3 uur, zonder MessageOrder:
+Deze heeft default een retryCount van 8 en een retryInterval van 3 uur, zonder MessageOrder:
 
-    ```XML
-    <tns:MessagingCharacteristics tns:syncReplyMode="none"
-    tns:ackRequested="always" tns:actor="urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH"
-    tns:ackSignatureRequested="never"    tns:duplicateElimination="always"/>
-    ```
+```XML
+<tns:MessagingCharacteristics tns:syncReplyMode="none"
+tns:ackRequested="always" tns:actor="urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH"
+tns:ackSignatureRequested="never"    tns:duplicateElimination="always"/>
+```
 
-    De waardes kunnen per CPA bepaald worden, en liggen dus niet bij voorbaat vast.
+De waardes kunnen per CPA bepaald worden, en liggen dus niet bij voorbaat vast.
 
-    In het geval dat MessageOrder wel gebruikt wordt, komt in de CPA:
+In het geval dat MessageOrder wel gebruikt wordt, komt in de CPA:
 
-    <tns:MessageOrderSemantics>Guaranteed</tns:MessageOrderSemantics>
+<tns:MessageOrderSemantics>Guaranteed</tns:MessageOrderSemantics>
 
-    Conform de ebMS2 specificatie zal de applicatie dezelfde ConversationId moeten gebruiken voor de opeenvolgende berichten<sup>5</sup>.
+Conform de ebMS2 specificatie zal de applicatie dezelfde ConversationId moeten gebruiken voor de opeenvolgende berichten<sup>5</sup>.
 
-    <sup>5</sup>: [[EBXML-MSG]] H9.1.1 “The REQUIRED SequenceNumber element indicates the sequence a Receiving MSH MUST process messages. The SequenceNumber **is unique within** the ConversationId and MSH.”
+> <sup>5</sup>. [[EBXML-MSG]] H9.1.1 “The REQUIRED SequenceNumber element indicates the sequence a Receiving MSH MUST process messages. The SequenceNumber **is unique within** the ConversationId and MSH.”
 
-- PersistDuration
+### PersistDuration
 
-    Deze heeft default de waarde van 1 dag, maar zal anders zijn als er andere waardes voor ReliableMessaging gebruikt worden:
+Deze heeft default de waarde van 1 dag, maar zal anders zijn als er andere waardes voor ReliableMessaging gebruikt worden:
 
-    ```XML
-    <tns:PersistDuration>P1D</tns:PersistDuration>
-    ```
+```XML
+<tns:PersistDuration>P1D</tns:PersistDuration>
+```
 
-- MessagingCharacteristic
+### MessagingCharacteristic
 
-    Deze heeft de waarde:
+Deze heeft de waarde:
 
-    ```XML
-    <tns:MessagingCharacteristics
+```XML
+<tns:MessagingCharacteristics
 
-    tns:syncReplyMode="none"
+tns:syncReplyMode="none"
 
-    tns:ackRequested="always"
+tns:ackRequested="always"
 
-    tns:actor="urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH"
+tns:actor="urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH"
 
-    tns:ackSignatureRequested="never"
+tns:ackSignatureRequested="never"
 
-    tns:duplicateElimination="always"/>
-    ```
+tns:duplicateElimination="always"/>
+```
 
-    Geen gebruik van Signing of (payload) Encryption. (Alleen op HTTP nivo wordt informatie beveiligd)
+Geen gebruik van Signing of (payload) Encryption. (Alleen op HTTP nivo wordt informatie beveiligd)
 
-    Er moet gebruik gemaakt worden van certificaten die voldoen aan de eisen van de PKI Overheid.
+### Certificaten
+
+Er moet gebruik gemaakt worden van certificaten die voldoen aan de eisen van de PKI Overheid.
 
 ## Hoe wordt een CPA gemaakt?
 
@@ -233,7 +236,7 @@ Op basis van de hierboven genoemde CPA onderdelen kan alleen een 'CPA template' 
 
 In het document 'Digikoppeling CPA Creatiehandleiding' is te lezen met welke gegevens een CPA gemaakt wordt, in combinatie met Digikoppeling CPA Creatievoorziening.
 
-| **Meer informatie**     | **Zie document in de aansluitkit**               | **Doelgroep** |
+| Meer informatie     | Zie document in de aansluitkit               | Doelgroep |
 |-------------------------|--------------------------------------------------|---------------|
 | Handleiding CPA register | [https://www.logius.nl/diensten/digikoppeling/aanvragen/voorbereiden](https://www.logius.nl/diensten/digikoppeling/aanvragen/voorbereiden) | [A&D] [OT&B]  |
 
