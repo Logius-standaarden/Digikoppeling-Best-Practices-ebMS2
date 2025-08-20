@@ -84,7 +84,7 @@ Digikoppeling houdt zich niet met de inhoud bezig, '_heeft geen boodschap aan de
 
 [Hoofdstuk 4 gaat over bericht volgordelijkheid.](#het-gebruik-van-berichtvolgordelijkheid)
 
-> Begrippen en afkortingen worden toegelicht in het document [[Digikoppeling-Architectuur]].  
+> Begrippen en afkortingen worden toegelicht in het document [[DK-Architectuur]].
 > Dit document is onderdeel van de Digikoppeling standaard.
 
 <div class="note">Dit document en alle andere Digikoppeling documentatie is beschikbaar op [de website van Logius](http://www.logius.nl/digikoppeling).

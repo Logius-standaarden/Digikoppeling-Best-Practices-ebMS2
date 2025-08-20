@@ -43,7 +43,7 @@ Daarom is het hebben van een CPA het uitgangspunt voor de specificatie en config
 
 De kenmerken van het ebMS2 verkeer op Digikoppeling zijn beschreven in het document:
 
-' Digikoppeling Koppelvlakstandaard ebMS2'. Dit document is op de website van Digikoppeling te vinden [[?Digikoppeling Logius website]].
+' Digikoppeling Koppelvlakstandaard ebMS2'. Dit document is op [de website van Digikoppeling](https://www.logius.nl/onze-dienstverlening/gegevensuitwisseling/digikoppeling) te vinden.
 
 De kenmerken zijn vertaald naar relevante onderdelen van een CPA. Deze CPA onderdelen worden hieronder beschreven in termen zoals benoemd in [[ebCPP]].
 
@@ -146,7 +146,7 @@ en voor bijvoorbeeld versie 1 van TLS
 ```
 
 <aside class="note">
-voor de actuele versies van het te gebruiken protocol bij de uitwisseling zie [[Digikoppeling Beveiligingsdocument]]
+voor de actuele versies van het te gebruiken protocol bij de uitwisseling zie [[DK-beveiliging]]
 </aside>
 
 ### Client Authentication over HTTP met client certificaat. 
