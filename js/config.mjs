@@ -1,10 +1,6 @@
 import { loadRespecWithConfiguration } from "https://logius-standaarden.github.io/publicatie/respec/organisation-config.mjs";
 
 loadRespecWithConfiguration({
-  alternateFormats: [ { 
-        "label" : "pdf",
-        "uri" : "Digikoppeling-Best-Practices-ebMS2.pdf"
-      } ],
   authors: [ { 
         "mailto" : "digikoppeling@logius.nl",
         "name" : "Logius"
